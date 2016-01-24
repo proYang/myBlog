@@ -2,7 +2,11 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	margin:0;
 	padding:0;
 	border:0;
-	text-decoration: none;
+	text-decoration: none;	
+    font-family:"微软雅黑", Arial, Helvetica, sans-serif;
+}
+body{
+    background-color: #f2f2f2;
 }
 @font-face {font-family: 'iconfont';
     src: url('../iconfont/iconfont.eot'); /* IE9*/
@@ -24,7 +28,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     background-position: 0 -1px;
 }
 .container{
-	height: 10px;
     position: relative;
     width: 960px;
     margin: 0 auto;
@@ -37,7 +40,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	float: left;
 	text-align: center;
 	line-height: 49px;
-    font-family:"微软雅黑", Arial, Helvetica, sans-serif;
     list-style: none;
 }
 .title-content a{
@@ -78,4 +80,48 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 }
 #search:active{
 	background-color: #eee;
+}
+
+
+
+
+
+#main{
+	padding: 80px 0 0 0;
+}
+.article-show{
+	float: left;
+	padding: 30px 20px;
+	margin: 10px;
+	width: 260px;
+	height: 330px;
+	background-color: #fff;
+}
+.article-show a{
+	color: #222;
+}
+.article-show >h2{
+	text-align: center;
+}
+.article-show >p{
+	margin-top: 20px;
+	padding-bottom: 40px;
+    border-bottom: 2px solid #eee;
+    font-size: 18px;
+    color: #666;
+}
+.article-foot{
+	padding: 12px 8px;
+}
+.article-foot span{
+	color: #666;
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:20px;
+    color: #999;
+    font-style:normal;
+}
+.artile-time{
+	float: right;
 }
