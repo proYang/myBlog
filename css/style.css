@@ -1,4 +1,4 @@
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video{
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video{
 	margin:0;
 	padding:0;
 	border:0;
@@ -44,6 +44,7 @@ body{
 }
 .title-content a{
 	color: #999;
+	transition:all 1s;
 }
 .title-content a:hover{
 	color: #fff;
@@ -61,33 +62,50 @@ body{
 	background-repeat: no-repeat;
 	background-position: 85px 12px;
 }
-#search{
+#mylink{
 	float: right;
-	margin: 13px 20px 0 0px;
-	background-image: url(../img/search.png);
-	background-repeat: no-repeat;
-	background-position: 150px 5px;
-	border-radius: 20px;
+	margin: 13px 30px 0 0px;
 }
-#searchform{
-	width: 150px;
-	padding: 0 10px;
-	background: transparent;
-	border: 1px solid #3F3F3F;
-	border-radius: 20px;
-	height: 23px;
-	outline: none;
+#mylink li{
+	float: left;
+	margin-left: 5px;
+	width: 28px;
+	height: 28px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 28px;
+	background-color: #424242;
+	color: #f2f2f2;
+	list-style: none;
+	transition:all 0.6s;
 }
-#search:active{
-	background-color: #eee;
+#mylink li:hover{
+	background-color: #f2f2f2;
+	color: #424242;
 }
-
-
-
 
 
 #main{
 	padding: 80px 0 0 0;
+	overflow: hidden;
+}
+#head-photo{
+	margin: 40px;
+}
+#head-photo >img{
+	display: block;
+	margin: 0 auto;
+	height: 160px;
+	width: 160px;
+	border-radius: 50%;
+	transition:all 1s;
+}
+#head-photo >img:hover{
+	box-shadow: 0 0 40px #666;
+}
+#myword p{
+	text-align: center;
+	padding-bottom: 50px;
 }
 .article-show{
 	float: left;
@@ -96,6 +114,10 @@ body{
 	width: 260px;
 	height: 330px;
 	background-color: #fff;
+	transition:all 0.5s;
+}
+.article-show:hover{
+	box-shadow: 0 0 12px #ccc;
 }
 .article-show a{
 	color: #222;
@@ -124,4 +146,55 @@ body{
 }
 .artile-time{
 	float: right;
+}
+
+
+#footer-link{
+	margin-top: 40px;
+	padding: 20px 50px;
+	border-top: 1px #999 solid;
+	border-bottom: 1px #999 solid;
+	overflow: hidden;
+}
+
+#footer li{
+	float: left;
+	margin: 0 10px;
+	color: #666;
+	list-style: none;
+	overflow: hidden;
+}
+#footer a{
+	color: #666;
+}
+#footer a:hover{
+	color: #000;
+}
+#footer >p{
+	line-height: 60px;
+	text-align: center;
+	color: #666;
+}
+
+
+.go-top{
+	position: fixed;
+    right: 45px;
+    bottom: 38px;
+    z-index: 9999;
+}
+.go-top a{
+	display: block;
+	background-image: url(../img/go-top2.png);
+    background-repeat: no-repeat;
+    background-position: center 15px;
+    width: 50px;
+    height: 50px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition:all 0.5s;
+}
+.go-top a:hover{
+	background-image: url(../img/go-top1.png);
+	background-color: rgb(153,153,153);
 }
