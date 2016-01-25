@@ -46,7 +46,7 @@ body{
 	color: #999;
 	transition:all 1s;
 }
-.title-content a:hover{
+.title-item a,.title-content a:hover{
 	color: #fff;
     text-shadow: 1px 0 20px #fff;
 }
@@ -64,7 +64,7 @@ body{
 }
 #mylink{
 	float: right;
-	margin: 13px 30px 0 0px;
+	margin: 10px 30px 0 0px;
 }
 #mylink li{
 	float: left;
@@ -161,6 +161,7 @@ body{
 	float: left;
 	margin: 0 10px;
 	color: #666;
+	font-size: 14px;
 	list-style: none;
 	overflow: hidden;
 }
@@ -174,6 +175,7 @@ body{
 	line-height: 60px;
 	text-align: center;
 	color: #666;
+	font-size: 12px;
 }
 
 
@@ -181,9 +183,9 @@ body{
 	position: fixed;
     right: 45px;
     bottom: 38px;
-    z-index: 9999;
+    z-index: 90;
 }
-.go-top a{
+.jump-top{
 	display: block;
 	background-image: url(../img/go-top2.png);
     background-repeat: no-repeat;
@@ -194,7 +196,7 @@ body{
     border-radius: 4px;
     transition:all 0.5s;
 }
-.go-top a:hover{
+.jump-top:hover{
 	background-image: url(../img/go-top1.png);
 	background-color: rgb(153,153,153);
 }
