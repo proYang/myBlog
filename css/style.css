@@ -4,6 +4,7 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
 	border:0;
 	text-decoration: none;	
     font-family:"微软雅黑", Arial, Helvetica, sans-serif;
+    list-style: none;
 }
 body{
     background-color: #f2f2f2;
@@ -26,6 +27,7 @@ body{
     background-image: url(../img/topfixed_bg.png);
     background-repeat: repeat-x;
     background-position: 0 -1px;
+    box-shadow: 0 0 5px #444;
 }
 .container{
     position: relative;
@@ -85,6 +87,7 @@ body{
 }
 
 
+/*首页中部*/
 #main{
 	padding: 80px 0 0 0;
 	overflow: hidden;
@@ -148,7 +151,7 @@ body{
 	float: right;
 }
 
-
+/*页脚*/
 #footer-link{
 	margin-top: 40px;
 	padding: 20px 50px;
@@ -178,7 +181,7 @@ body{
 	font-size: 12px;
 }
 
-
+/*go-top*/
 .go-top{
 	position: fixed;
     right: 45px;
@@ -200,3 +203,42 @@ body{
 	background-image: url(../img/go-top1.png);
 	background-color: rgb(153,153,153);
 }
+
+/*控制面板*/
+.title-control{
+	width: 90px;
+	margin: 0 14px 0 300px;
+	font-size: 18px;
+	float: left;
+	line-height: 49px;
+    list-style: none;
+
+}
+.title-control >a{
+    color: #fff;
+}
+#control{
+	top: 50px;
+	overflow: hidden;
+}
+#control-menu{
+	float: left;
+	padding-top: 15px;
+	padding-left: 30px;
+	width: 170px;
+	background-color: #fff;
+	line-height: 35px;
+    box-shadow: 0 0 5px #444;
+}
+#control-menu a{
+	margin-left: 12px;
+	color: #444;
+}
+#control-area{
+	float: left;
+    width: 760px;
+    height: 400px;
+}
+
+
+
