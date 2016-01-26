@@ -36,7 +36,7 @@ body{
     padding: 0;
 }
 .title-content{
-	width: 90px;
+	width: 75px;
 	margin: 0 14px 0 0;
 	font-size: 18px;
 	float: left;
@@ -81,9 +81,16 @@ body{
 	list-style: none;
 	transition:all 0.6s;
 }
-#mylink li:hover{
+#mylink-li:hover{
 	background-color: #f2f2f2;
 	color: #424242;
+}
+.sign{
+	width: 80px!important;
+	background-color: #212121!important;
+}
+.sign:hover{
+	text-shadow: 1px 0 20px #fff!important;
 }
 
 
@@ -218,27 +225,50 @@ body{
     color: #fff;
 }
 #control{
-	top: 50px;
+	top: 80px;
 	overflow: hidden;
 }
 #control-menu{
+	margin: 10px 0 0 10px;
 	float: left;
-	padding-top: 15px;
-	padding-left: 30px;
 	width: 170px;
 	background-color: #fff;
-	line-height: 35px;
-    box-shadow: 0 0 5px #444;
+	line-height: 45px;
+    box-shadow: 0 0 10px #BDBDBD;
+    border-radius: 5px;
 }
-#control-menu a{
-	margin-left: 12px;
+.control-content{
+	cursor: pointer;
+	padding-left: 20px;
+	border: 1px solid rgba(221, 221, 221, 0.46);
+	border-radius: 5px;
+	transition:all .5s;
+}
+.control-content:hover{
+	margin-left: 15px;
+	background-color: #eee;
+}
+#control-title{
+	padding-left: 20px;
+	line-height: 20px;
+	font-size: 13px;
+	font-weight: 900;
+	color: #666;
+}
+#control-menu i{
+	padding-right: 20px;
 	color: #444;
 }
-#control-area{
-	float: left;
+.control-area{
+	margin: 10px;
+	float: right;
     width: 760px;
     height: 400px;
+    background-color: #fff;
+    box-shadow: 0 0 10px #BDBDBD;
+    border-radius: 5px;
+    display: none;
 }
-
-
-
+#area-write{
+	display: block;
+}
