@@ -274,3 +274,63 @@ body{
 #area-write{
 	display: block;
 }
+
+/*登录框*/
+#loginbody{
+	background-color: #fff;
+}
+.login-box{
+	margin: 150px auto;
+	padding-top: 25px;
+	height: 275px;
+	width: 500px;
+	background-color: #f5f5f5;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	overflow: hidden;
+}
+.input-group{
+	margin: 25px auto;
+	width: 430px;
+	height: 54px;
+
+}
+.input-lable{
+	float: left;
+	display: block;
+	width: 54px;
+	height: 52px;
+	border-top-left-radius: 6px;
+	border-bottom-left-radius: 6px;
+	border: 1px solid #ccc;
+	background-color: #eee;
+	text-align: center;
+	line-height: 54px;
+}
+.input-lable >i{
+	font-size: 28px;
+	color:  #B94846;
+}
+.form-input{
+	float: left;
+	padding-left: 20px;
+	width: 346px;
+	height: 50px;
+	border: 1px solid #ccc;
+	border-top-right-radius: 6px;
+	border-bottom-right-radius: 6px;
+	font-size: 18px;
+	font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+}
+.from-btn{
+	margin: 30px auto;
+	height: 40px;
+    width: 180px;
+    color: #ffffff;
+    font-size: 14px;
+    font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+    background-color:#2fa4e7;
+    border: 1px solid #2fa4e7;
+    border-radius: 4px;
+    display:block;
+}

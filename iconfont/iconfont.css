@@ -15,11 +15,13 @@
   -webkit-text-stroke-width: 0.2px;
   -moz-osx-font-smoothing: grayscale;
 }
-.icon-zan:before { content: "\e64d"; }
-.icon-pinglun:before { content: "\e60d"; }
-.icon-fenxiang:before { content: "\e627"; }
-.icon-xinlangweibo:before { content: "\e605"; }
-.icon-github:before { content: "\e735"; }
-.icon-zhihu:before { content: "\e6d1"; }
-.icon-youjian:before { content: "\e612"; }
-.icon-qq:before { content: "\e683"; }
+.icon-qq:before { content: "\e600"; }
+.icon-xinlangweibo:before { content: "\e601"; }
+.icon-zhihu:before { content: "\e602"; }
+.icon-zan:before { content: "\e603"; }
+.icon-github:before { content: "\e604"; }
+.icon-youjian:before { content: "\e605"; }
+.icon-pinglun:before { content: "\e606"; }
+.icon-yonghu:before { content: "\e607"; }
+.icon-fenxiang:before { content: "\e608"; }
+.icon-suoding:before { content: "\e609"; }
