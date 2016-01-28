@@ -12,7 +12,7 @@
                 $link = mysqli_connect('localhost', 'root', '','myblog');//链接数据库
                 mysqli_select_db($link,"myblog");
                 mysqli_query($link,'set name utf8');
-                $sql = "select username from user where username = '$_POST[username]'";
+                $sql = "select username,password from user where username = '$_POST[username]' and password = '$_POST[password]'";
                 $result = mysqli_query($link,$sql);
                 $num = mysqli_num_rows($result);
 
