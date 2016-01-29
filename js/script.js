@@ -14,3 +14,12 @@ function appear () {
 	tempId=tempId.replace("menu","#area");
 	document.querySelector(tempId).style.display="block";
 }
+
+// go-top效果
+function goTop() {
+ window.scrollBy(0,-5);
+ if(document.body.scrollTop>0) { 
+ 	// setInterval('goTop()',1000)
+ 	setTimeout('goTop()',5);
+ }
+}

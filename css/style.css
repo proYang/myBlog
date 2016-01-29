@@ -191,7 +191,7 @@ body{
 }
 
 /*go-top*/
-.go-top{
+#goTop{
 	position: fixed;
     right: 45px;
     bottom: 38px;
