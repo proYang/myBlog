@@ -17,9 +17,11 @@ function appear () {
 
 // go-top效果
 function goTop() {
- window.scrollBy(0,-5);
- if(document.body.scrollTop>0) { 
- 	// setInterval('goTop()',1000)
- 	setTimeout('goTop()',5);
- }
+	// 兼容各浏览器
+	var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+	window.scrollBy(0,-12);
+	if(scrollTop>0) { 
+	// setInterval('goTop()',1000)
+	setTimeout('goTop()',5);
+	}
 }
