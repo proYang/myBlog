@@ -265,7 +265,6 @@ body{
 	margin: 10px;
 	float: right;
     width: 760px;
-    height: 400px;
     background-color: #fff;
     box-shadow: 0 0 10px #BDBDBD;
     border-radius: 5px;
@@ -273,6 +272,51 @@ body{
 }
 #area-write{
 	display: block;
+}
+#write-content{
+	padding: 50px;
+}
+#write-category{
+	float: left;
+	width: 150px;
+	height: 30px;
+	border: 1px solid #999;
+	display: block;
+	font-family:"微软雅黑", Arial, Helvetica, sans-serif;
+}
+#write-category option{
+	font-family:"微软雅黑", Arial, Helvetica, sans-serif;
+}
+#write-category option:hover{
+
+}
+#write-title{
+	float: left;
+	padding: 0;
+	border: 1px solid #999;
+	height: 28px;
+	width: 250px;
+	font-size: 14px;
+	display: block;
+	outline:none;
+	font-family:"微软雅黑", Arial, Helvetica, sans-serif;
+}
+#write-content textarea{
+	float: left;
+	margin-top: 15px;
+	display: block;
+	resize:none;
+	width: 660px;
+	height: 350px;
+	font-size: 14px;
+	outline:none;
+	font-family:"微软雅黑", Arial, Helvetica, sans-serif;
+}
+#write-submit{
+	float: right;
+	margin: 10px 40px 40px auto;
+	font-size: 14px;
+	font-family:"微软雅黑", Arial, Helvetica, sans-serif;
 }
 
 /*登录框*/

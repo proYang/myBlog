@@ -29,7 +29,21 @@
 				<li class="control-content" id="menu-words"><i class="iconfont">&#xe60f;</i>评论审核</li>
 			</ul>
 		</div>
-		<div id="area-write" class="control-area">write</div>
+		<div id="area-write" class="control-area">
+			<div id="write-content">
+				<form name="article" method="post" action="../php-version/articlePublish.php">
+				<select name="" id="write-category">
+					<option value="0">选择分类</option>
+	        		<option value="1">分类一</option>
+	        		<option value="2">分类二</option>
+	        		<option value="3">分类三</option>
+	        	</select>
+	        	<input type="text" name="title" id="write-title" placeholder="请输入文章标题"/>
+	        	<textarea name="content" placeholder="请输入文章内容"></textarea>
+	            <input id="write-submit" type="submit" value="发布"/>
+	    		</form>
+	    	</div>
+		</div>
 		<div id="area-message" class="control-area">message</div>
 		<div id="area-manage" class="control-area">manage</div>
 		<div id="area-class" class="control-area">class</div>
