@@ -9,7 +9,7 @@
 	<div id="top-fix">
 		<div class="container">
 			<ul>
-				<li class="title-content" id="left-icon"><a href=""><div>博客</div></a></li>
+				<li class="title-content" id="left-icon"><a href="../index.html"><div>博客</div></a></li>
 				<li class="title-control"><a href="">后台管理</a></li>
 			</ul>
 			<ul id="mylink">
@@ -32,11 +32,31 @@
 		<div id="area-write" class="control-area">
 			<div id="write-content">
 				<form name="article" method="post" action="../php-version/articlePublish.php">
-				<select name="" id="write-category">
-					<option value="0">选择分类</option>
-	        		<option value="1">分类一</option>
-	        		<option value="2">分类二</option>
-	        		<option value="3">分类三</option>
+				<select name="selectname" id="write-category">
+					<!-- 面向对象zxw -->
+					<?php 		
+						@$db = new mysqli('localhost', root, '', 'myblog');
+						$db->query('set names utf8');
+						if (mysqli_connect_errno()){
+							echo "Error: Could not connect to database. Please try again later";
+							exit;
+						}
+						$query = "select * from terms";							
+						$result = $db->query($query);							
+						$row_num = $result->num_rows;							
+						for($i = 0; $i < $row_num; $i++){
+							$row = $result->fetch_assoc();
+							echo "<option value= '".$row['term_id']."'>".$row['name']."</option>";
+						}
+						$result->free();
+						$db->close();
+					?>
+					<!-- <option value="0">未分类</option>
+	        		<option value="1">日记</option>
+	        		<option value="2">前端汇总</option>
+	        		<option value="3">后端汇总</option>
+	        		<option value="4">编程工具</option>
+	        		<option value="5">信息安全</option> -->
 	        	</select>
 	        	<input type="text" name="title" id="write-title" placeholder="请输入文章标题"/>
 	        	<textarea name="content" placeholder="请输入文章内容"></textarea>
