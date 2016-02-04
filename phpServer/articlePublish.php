@@ -13,7 +13,7 @@
     //echo $re;
     if($re){
         echo "<script>alert('发布成功');</script>";
-        echo "<script>location.href='../pages/control.php'</script>";
+        echo "<script>location.href='../php-version/controlWrite.php'</script>";
         // echo '<a href="articleList.php">返回文章列表</a>';
     }else{
         echo "<script>alert('发布失败');</script>";

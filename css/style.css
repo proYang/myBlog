@@ -261,6 +261,27 @@ body{
 	padding-right: 20px;
 	color: #444;
 }
+#control-menu a{
+	color: #444;
+}
+#menu-write{
+	background-color: #00d0ff;
+}
+#menu-message{
+	background-color: #9bbd1c;
+}
+#menu-manage{
+	background-color: #ffaa00;
+}
+#menu-class{
+	background-color: #ff4086;
+}
+#menu-photos{
+	background-color: #00d0ff;
+}
+#menu-words{
+	background-color: #9bbd1c;
+}
 .control-area{
 	margin: 10px;
 	float: right;
@@ -268,7 +289,7 @@ body{
     background-color: #fff;
     box-shadow: 0 0 10px #BDBDBD;
     border-radius: 5px;
-    display: none;
+    display: block;
 }
 #area-write{
 	display: block;
