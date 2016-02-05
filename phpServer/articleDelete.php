@@ -9,8 +9,8 @@
         // echo "删除成功";
         // echo "<a href='articleList.php'>返回文章列表</a>";
         echo "<script>alert('删除成功');</script>";
-        echo "<script>location.href='../php-version/controlManage.php'</script>";
+        echo "<script>location.href='controlManage.php'</script>";
     }else{
-        echo "<script>alert('删除成功');</script>";
-        echo "<script>location.href='../php-version/controlManage.php'</script>";
+        echo "<script>alert('删除失败');</script>";
+        echo "<script>location.href='controlManage.php'</script>";
     }

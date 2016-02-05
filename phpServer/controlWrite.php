@@ -31,7 +31,7 @@
 		</div>
 		<div id="area-write" class="control-area">
 			<div id="write-content">
-				<form name="article" method="post" action="../php-version/articlePublish.php">
+				<form name="article" method="post" action="../phpServer/articlePublish.php">
 				<select name="selectname" id="write-category">
 					<!-- 面向对象zxw -->
 					<?php 		

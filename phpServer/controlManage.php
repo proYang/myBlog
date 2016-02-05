@@ -30,13 +30,7 @@
 			</ul>
 		</div>
 		<div id="area-manage" class="control-area">
-			<table>
-	        <tr>
-	            <th>编号</th>
-	            <th>文章标题</th>
-	            <th>文章内容</th>
-	            <th>编辑文章</th>
-	        </tr>
+	        <ul>
 	        <?php 
 	        	define('PAGE_SIZE', 10);
 	        	
@@ -72,22 +66,16 @@
 	        	
 	        	while ($row = $result->fetch_assoc()){
 	        ?>
-	        	<tr>
-	        		<td><?php echo $row['id']?></td>
-	        		<td><?php echo $row['title']?></td>
-	        		<td><?php echo $row['content']?></td>
-	        		<td>
-	                    <a href="articleEdit.php?id=<?php echo $row['id']?>">修改</a>
-	                    <a href="articleDelete.php?id=<?php echo $row['id']?>">删除</a>
-	                </td>
-	        	</tr>
+	        		<li><span class="manage-title"><?php echo $row['title']?></span><span class="manage-time"><?php echo $row['time']?></span><span class="manage-setting"><a href="articleEdit.php?id=<?php echo $row['id']?>">编辑</a>
+	                    <a href="articleDelete.php?id=<?php echo $row['id']?>">删除</a></span></li>
+	        	
 	        <?php 
 	        	}
 	        	
 	        	$result->free();
 	        	$db->close();
 	        ?>
-			</table>
+	        	</ul>
 			<div>
 		        共<?php echo $sum_page?>页 |查到<?php echo $num_result;?>条记录
 		        当前第<?php echo $current_page?>页|

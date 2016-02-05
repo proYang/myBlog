@@ -273,6 +273,7 @@ body{
 #menu-manage{
 	background-color: #ffaa00;
 }
+
 #menu-class{
 	background-color: #ff4086;
 }
@@ -308,9 +309,6 @@ body{
 #write-category option{
 	font-family:"微软雅黑", Arial, Helvetica, sans-serif;
 }
-#write-category option:hover{
-
-}
 #write-title{
 	float: left;
 	padding: 0;
@@ -338,6 +336,23 @@ body{
 	margin: 10px 40px 40px auto;
 	font-size: 14px;
 	font-family:"微软雅黑", Arial, Helvetica, sans-serif;
+}
+#area-manage >ul{
+	padding: 50px;
+	overflow: hidden;
+}
+#area-manage li{
+	height: 35px;
+}
+.manage-setting{
+	float: right;
+	padding-right: 30px;
+}
+.manage-time{
+}
+.manage-title{
+	float: left;
+	width: 420px;
 }
 
 /*登录框*/

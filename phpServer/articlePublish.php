@@ -5,7 +5,7 @@
     $selectname = $_POST['selectname'];
     $title = $_POST['title'];
     $content = $_POST['content'];
-    $time=date('Ymdhia');
+    $time=date('Y-m-d');
     
     $sql = "insert into article(category,title,content,time) values ('$selectname','$title','$content','$time')";
     //echo $sql;
@@ -13,7 +13,7 @@
     //echo $re;
     if($re){
         echo "<script>alert('发布成功');</script>";
-        echo "<script>location.href='../php-version/controlWrite.php'</script>";
+        echo "<script>location.href='../phpServer/controlWrite.php'</script>";
         // echo '<a href="articleList.php">返回文章列表</a>';
     }else{
         echo "<script>alert('发布失败');</script>";
