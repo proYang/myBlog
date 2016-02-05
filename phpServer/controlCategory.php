@@ -29,7 +29,8 @@
 				<li class="control-content"><a href="controlComment.php"><i class="iconfont">&#xe60f;</i>评论审核</a></li>
 			</ul>
 		</div>
-		<div id="area-class" class="control-area">class</div>
+		<div id="area-class" class="control-area">
+		</div>
 	</div>
 </body>
 </html>

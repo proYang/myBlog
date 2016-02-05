@@ -66,23 +66,29 @@
 	        	
 	        	while ($row = $result->fetch_assoc()){
 	        ?>
-	        		<li><span class="manage-title"><?php echo $row['title']?></span><span class="manage-time"><?php echo $row['time']?></span><span class="manage-setting"><a href="articleEdit.php?id=<?php echo $row['id']?>">编辑</a>
-	                    <a href="articleDelete.php?id=<?php echo $row['id']?>">删除</a></span></li>
+	        		<li><span class="manage-title">
+	        				<a href="articleEdit.php?id=<?php echo $row['id']?>"><?php echo $row['title']?></a>
+	        			</span>
+	        			<span class="manage-time"><?php echo $row['time']?></span>
+	        			<span class="manage-setting"><a href="articleEdit.php?id=<?php echo $row['id']?>">编辑</a>
+	                    							 <a href="articleDelete.php?id=<?php echo $row['id']?>">删除</a>
+	                   	</span>
+	                </li>
 	        	
-	        <?php 
+	        <?php
 	        	}
 	        	
 	        	$result->free();
 	        	$db->close();
 	        ?>
 	        	</ul>
-			<div>
-		        共<?php echo $sum_page?>页 |查到<?php echo $num_result;?>条记录
-		        当前第<?php echo $current_page?>页|
+			<div id="control-pages">
+				<span>共<?php echo $num_result;?>篇文章</span>
+		        <span>第<?php echo $current_page?>/<?php echo $sum_page?>页</span>
 		        <a href="controlManage.php?page=1">首页</a>
-		        <a href="controlManage.php?page=<?php echo ($current_page-1)?>">|上一页</a>
-		        <a href="controlManage.php?page=<?php echo ($current_page+1)?>">|下一页</a>
-		        <a href="controlManage.php?page=<?php echo $sum_page?>">|末页</a>
+		        <a href="controlManage.php?page=<?php echo ($current_page-1)?>">上一页</a>
+		        <a href="controlManage.php?page=<?php echo ($current_page+1)?>">下一页</a>
+		        <a href="controlManage.php?page=<?php echo $sum_page?>">末页</a>
 		    </div>
 		</div>
 	</div>

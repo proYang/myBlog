@@ -296,7 +296,7 @@ body{
 	display: block;
 }
 #write-content{
-	padding: 50px;
+	padding: 45px 50px 50px 50px;
 }
 #write-category{
 	float: left;
@@ -338,21 +338,59 @@ body{
 	font-family:"微软雅黑", Arial, Helvetica, sans-serif;
 }
 #area-manage >ul{
-	padding: 50px;
-	overflow: hidden;
+	padding: 30px 50px 20px 50px;
 }
 #area-manage li{
 	height: 35px;
+	line-height: 35px;
+}
+#control-pages{
+	padding:0 80px 20px 50px;
+}
+#control-pages >a{
+	margin-right: 5px;
+	padding: 5px 10px;
+	background-color: #ddd;
+	color: #444;
+	font-size: 14px;
+}
+#control-pages >a:hover{
+	background-color: #00AAF0;
+    color: #fff;
+}
+#control-pages >span{
+	height: 29px;
+	float: right;
+	margin-right: 40px;
+	color: #444;
+	font-size: 14px;
 }
 .manage-setting{
+	margin-top: -1px;
 	float: right;
 	padding-right: 30px;
 }
-.manage-time{
+.manage-setting >a{
+	margin-left: 10px;
+	color: #666;
+	font-size: 15px;
 }
-.manage-title{
+.manage-setting >a:hover{
+	color: #ffaa00;
+	text-decoration: underline;
+}
+.manage-time{
+	font-size: 14px;
+	color: #444;
+}
+.manage-title a{
+	color: #444;
+	font-size: 16px;
 	float: left;
 	width: 420px;
+}
+.manage-title a:hover{
+	text-decoration: underline;
 }
 
 /*登录框*/
