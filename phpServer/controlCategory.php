@@ -30,6 +30,7 @@
 			</ul>
 		</div>
 		<div id="area-class" class="control-area">
+			
 		</div>
 	</div>
 </body>

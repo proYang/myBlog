@@ -31,7 +31,7 @@
 		</div>
 		<div id="area-write" class="control-area">
 			<div id="write-content">
-				<form name="article" method="post" action="../phpServer/articlePublish.php">
+				<form onsubmit="return myconfirm();" name="article" method="post" action="../phpServer/articlePublish.php">
 				<select name="selectname" id="write-category">
 					<!-- 面向对象zxw -->
 					<?php 		
@@ -54,5 +54,6 @@
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript" src="../js/confirm.js"></script>
 </body>
 </html>
