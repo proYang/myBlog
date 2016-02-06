@@ -67,7 +67,7 @@
 	        	while ($row = $result->fetch_assoc()){
 	        ?>
 	        		<li><span class="manage-title">
-	        				<a href="articleEdit.php?id=<?php echo $row['id']?>"><?php echo $row['title']?></a>
+	        				<i class='iconfont'>&#xe611;</i><a href="articleEdit.php?id=<?php echo $row['id']?>"><?php echo $row['title']?></a>
 	        			</span>
 	        			<span class="manage-time"><?php echo $row['time']?></span>
 	        			<span class="manage-setting"><a href="articleEdit.php?id=<?php echo $row['id']?>">编辑</a>

@@ -1,6 +1,5 @@
 <?php
     require_once'conn.php';
-    // header("content-type:text/html;charset=utf-8");
     date_default_timezone_set('Asia/Chongqing');
     $selectname = $_POST['selectname'];
     $title = $_POST['title'];
@@ -16,7 +15,7 @@
         echo "<script>location.href='../phpServer/controlWrite.php'</script>";
         // echo '<a href="articleList.php">返回文章列表</a>';
     }else{
-        echo "<script>alert('发布失败');</script>";
+        echo "<script>alert('发布失败');history.go(-1);</script>";
         // echo '<a href="articleList.php">返回文章列表</a>';
     }
     mysqli_close($link);//关闭数据库   

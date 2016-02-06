@@ -1,5 +1,4 @@
 <?php
-    header("content-type:text/html;charset=utf8");
     require_once 'conn.php';
     $id=(int)$_GET['id'];
     $sql="delete from article where id = '$id'";

@@ -29,8 +29,31 @@
 				<li class="control-content"><a href="controlComment.php"><i class="iconfont">&#xe60f;</i>评论审核</a></li>
 			</ul>
 		</div>
-		<div id="area-class" class="control-area">
-			
+		<div class="control-area">
+			<div id="area-class">
+				<form action="categoryPublish.php" method="get">
+					<input type="text" name="name" placeholder="请输入新分类">
+					<button>添加</button>
+				</form>
+				<?php
+					require_once 'conn.php';
+					$sql = "select * from terms";
+					$re = mysqli_query($link,$sql);
+					
+					foreach ($re as $row) {
+						$sql = "select * from article where category=".$row['term_id'];
+						$res = mysqli_query($link,$sql);
+						$category_num = mysqli_num_rows($res);
+						echo "<div class='cate-list'><i class='iconfont'>&#xe610;</i><span>{$row['name']}(".$category_num.")</span><a href='categoryDelete.php?id=".$row['term_id']."'>删除</a>";
+						// echo "<a href='categoryDelete.php?id=".$row['term_id']."'>删除</a>";
+						echo "<ul class='list-box'>";
+						foreach ($res as $row) {
+							echo "<li>{$row['title']}</li>";
+						}
+						echo "</ul></div>";
+					}
+				?>
+			</div>
 		</div>
 	</div>
 </body>

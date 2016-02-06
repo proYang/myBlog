@@ -75,7 +75,7 @@ body{
 	height: 28px;
 	border-radius: 50%;
 	text-align: center;
-	line-height: 28px;
+	line-height: 32px;
 	background-color: #424242;
 	color: #f2f2f2;
 	list-style: none;
@@ -86,6 +86,7 @@ body{
 	color: #424242;
 }
 .sign{
+	line-height: 28px!important;
 	border-radius: 100%!important;
 	width: 80px!important;
 	background-color: #212121!important;
@@ -264,24 +265,13 @@ body{
 #control-menu a{
 	color: #444;
 }
-#menu-write{
-	background-color: #00d0ff;
-}
-#menu-message{
-	background-color: #9bbd1c;
-}
-#menu-manage{
-	background-color: #ffaa00;
-}
-
-#menu-class{
-	background-color: #ff4086;
-}
-#menu-photos{
-	background-color: #00d0ff;
-}
+#menu-write,
+#menu-message,
+#menu-manage,
+#menu-class,
+#menu-photos,
 #menu-words{
-	background-color: #9bbd1c;
+	background-color: #eee;
 }
 .control-area{
 	margin: 10px;
@@ -294,6 +284,67 @@ body{
 }
 #area-write{
 	display: block;
+}
+
+#area-class{
+	overflow: hidden;
+	padding: 40px 50px;
+}
+
+#area-class form input{
+	margin-left: 40px;
+	text-align: center;
+	border: none;
+	border-bottom: 1px solid #666;
+	outline: none;
+	font-size: 16px;
+	font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+}
+#area-class form button{
+	height: 26px;
+	font-size: 14px;	
+	font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+}
+.cate-list span{
+	font-size: 16px;
+	color: #333;
+}
+.cate-list i{
+	margin-right: 15px;
+	font-size: 18px;
+	/*color: #ff9800;*/
+	color: #444;
+}
+.cate-list a{
+	float: right;
+	margin-top: 4px;
+	margin-right: 30px;
+	color: #0277bd
+}
+.cate-list a:hover{
+	text-decoration: underline;
+	color: #ffaa00;
+}
+.cate-list{
+	float: left;
+	margin: 10px 20px;
+	padding: 10px 20px;
+	width: 250px;
+	border-radius: 5px;
+	cursor: default;
+	font-size: 13px;
+	background-color: #eee;
+	color: #555;
+	overflow: hidden;
+	box-shadow: 0 0 2px #BDBDBD;
+}
+.list-box{
+	margin: 10px 0;
+}
+.list-box li{
+	margin-left: 25px;
+	height: 20px;
+	list-style-type: decimal;
 }
 #write-content{
 	padding: 45px 50px 50px 50px;
@@ -382,6 +433,12 @@ body{
 .manage-time{
 	font-size: 14px;
 	color: #444;
+}
+.manage-title i{
+	float: left;
+	margin-right: 10px;
+	color: #333;
+	font-size: 14px;
 }
 .manage-title a{
 	color: #444;
