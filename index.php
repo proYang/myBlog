@@ -37,39 +37,25 @@
 		</div>
 		<div class="container">
 			<h2>近期文章:</h2><br>
-			<article class="article-show">
-				<h2><a href="">内网外入，外网入内</a></h2>
-                <p>地址：http://cqupt.congm.in 内网外入服务器实现 原理：nginx反向代理 设备：一台即能上内网又能上外网的一直开机不断网电脑 环境：nginx服务器（windows/linux操作系统） 配置： 配置IP – 设置并固定内网ip及网关、子网掩码等 配置route命令 – 实现切换路由…</p>
-	            <div class="article-foot"><a href="">
-		            <i class="iconfont">&#xe603;</i><span>1</span>
-		            <i class="iconfont">&#xe606;</i><span>2</span>
-		            <i class="iconfont">&#xe608;</i><span>3</span>
-		            <span class="artile-time">2015年9月1日</span>
-		            </a>
-                </div>
-			</article>
-			<article class="article-show">
-				<h2><a href="">内网外入，外网入内</a></h2>
-                <p>地址：http://cqupt.congm.in 内网外入服务器实现 原理：nginx反向代理 设备：一台即能上内网又能上外网的一直开机不断网电脑 环境：nginx服务器（windows/linux操作系统） 配置： 配置IP – 设置并固定内网ip及网关、子网掩码等 配置route命令 – 实现切换路由…</p>
-	            <div class="article-foot"><a href="">
-		            <i class="iconfont">&#xe603;</i><span>1</span>
-		            <i class="iconfont">&#xe606;</i><span>2</span>
-		            <i class="iconfont">&#xe608;</i><span>3</span>
-		            <span class="artile-time">2015年9月1日</span>
-		            </a>
-                </div>
-			</article>
-			<article class="article-show">
-				<h2><a href="">内网外入，外网入内</a></h2>
-                <p>地址：http://cqupt.congm.in 内网外入服务器实现 原理：nginx反向代理 设备：一台即能上内网又能上外网的一直开机不断网电脑 环境：nginx服务器（windows/linux操作系统） 配置： 配置IP – 设置并固定内网ip及网关、子网掩码等 配置route命令 – 实现切换路由…</p>
-	            <div class="article-foot"><a href="">
-		            <i class="iconfont">&#xe603;</i><span>1</span>
-		            <i class="iconfont">&#xe606;</i><span>2</span>
-		            <i class="iconfont">&#xe608;</i><span>3</span>
-		            <span class="artile-time">2015年9月1日</span>
-		            </a>
-                </div>
-			</article>
+			<?php
+				require_once "phpServer/conn.php";
+				$sql="select * from article ORDER BY time DESC limit 0,3 ";
+				$re=mysqli_query($link,$sql);
+				foreach ($re as $row) {
+			?>
+				<article class="article-show">
+					<h2><a href=""><?php echo $row['title'];?></a></h2>
+	                <p><?php echo mb_substr($row['content'],0,180,'utf-8')."......";?></p>
+		            <div class="article-foot">
+			            <a href="phpServer/support.php?id=<?php echo $row['id']?>"><i class="iconfont">&#xe603;</i><span><?php echo $row['support'];?></span></a>
+			            <i class="iconfont">&#xe606;</i><span><?php echo $row['comments'];?></span>
+			            <i class="iconfont">&#xe608;</i><span>1</span>
+			            <span class="artile-time"><?php echo $row['time'];?></span>			            
+	                </div>
+				</article>
+			<?php  };
+				mysqli_close($link);
+			?>
 		</div>
 	</div>
 	<div id="footer" class="container">
