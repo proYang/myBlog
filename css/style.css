@@ -287,6 +287,9 @@ body{
 }
 
 #area-class{
+	-moz-column-count:2; /* Firefox */
+	-webkit-column-count:2; /* Safari 和 Chrome */
+	column-count:2;
 	overflow: hidden;
 	padding: 40px 50px;
 }
@@ -326,9 +329,8 @@ body{
 	color: #ffaa00;
 }
 .cate-list{
-	float: left;
-	margin: 10px 20px;
-	padding: 10px 20px;
+	margin: 20px 20px;
+	padding: 30px 20px;
 	width: 250px;
 	border-radius: 5px;
 	cursor: default;
@@ -343,7 +345,7 @@ body{
 }
 .list-box li{
 	margin-left: 25px;
-	height: 20px;
+	min-height: 22px;
 	list-style-type: decimal;
 }
 #write-content{
