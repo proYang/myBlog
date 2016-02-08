@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
 	<meta charset="UTF-8">
-	<title>myBlog|文章</title>
+	<title>myBlog|相册</title>
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 <body>
@@ -10,12 +10,12 @@
 		<div class="container">
 			<ul>
 				<li class="title-content" id="left-icon"><a href=""><div>博客</div></a></li>
-				<li class="title-content"><a href="../index.html">主页</a></li>
-				<li class="title-content title-item"><a href="articles.html">文章</a></li>
-				<li class="title-content"><a href="photos.html">相册</a></li>
-				<li class="title-content"><a href="time.html">足迹</a></li>
-				<li class="title-content"><a href="personal.html">个人简介</a></li>
-				<li class="title-content"><a href="words.html">留言板</a></li>
+				<li class="title-content"><a href="../index.php">主页</a></li>
+				<li class="title-content"><a href="articles.php">文章</a></li>
+				<li class="title-content title-item"><a href="photos.php">相册</a></li>
+				<li class="title-content"><a href="time.php">足迹</a></li>
+				<li class="title-content"><a href="personal.php">个人简介</a></li>
+				<li class="title-content"><a href="words.php">留言板</a></li>
 			</ul>
 			<ul id="mylink">
 				<a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=t46Hg4KHjoWFhvfGxpnU2No" style="text-decoration:none;" target="_blank"><li class="iconfont">&#xe605;</li></a>

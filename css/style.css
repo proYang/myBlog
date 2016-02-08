@@ -99,8 +99,7 @@ body{
 
 /*首页中部*/
 #main{
-	padding: 80px 0 0 0;
-	overflow: hidden;
+	padding: 80px 0 0 0;	
 }
 #head-photo{
 	margin: 40px;
@@ -120,22 +119,31 @@ body{
 	text-align: center;
 	padding-bottom: 50px;
 }
-.article-show{
+#bigbox{
+	position: relative;
+}
+.smallbox{
 	float: left;
+	padding: 20px 0 0 20px;
+}
+.article-show{
 	padding: 30px 20px 0 20px;
-	margin: 10px;
 	width: 260px;
 	background-color: #fff;
 	transition:all 0.5s;
 }
 .article-show:hover{
-	box-shadow: 0 0 12px #ccc;
+	box-shadow: 0 0 12px #ddd;
 }
 .article-show a{
 	color: #222;
+	transition:all 0.5s;
 }
 .article-show >h2{
 	text-align: center;
+}
+.article-show >h2 a:hover{
+	color: #e84c3d;	
 }
 .article-show >p{
 	margin-top: 20px;
@@ -148,6 +156,8 @@ body{
 	padding: 12px 8px;
 }
 .article-foot span{
+	font-size: 18px;
+	font-weight: lighter;
 	color: #666;
 }
 .iconfont{
@@ -334,7 +344,7 @@ body{
 	border-radius: 5px;
 	cursor: default;
 	font-size: 13px;
-	background-color: #eee;
+	background-color: #fff;
 	color: #555;
 	overflow: hidden;
 	box-shadow: 0 0 2px #BDBDBD;

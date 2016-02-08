@@ -10,12 +10,12 @@
 		<div class="container">
 			<ul>
 				<li class="title-content" id="left-icon"><a href=""><div>博客</div></a></li>
-				<li class="title-content title-item"><a href="index.html">主页</a></li>
-				<li class="title-content"><a href="pages/articles.html">文章</a></li>
-				<li class="title-content"><a href="pages/photos.html">相册</a></li>
-				<li class="title-content"><a href="pages/time.html">足迹</a></li>
-				<li class="title-content"><a href="pages/personal.html">个人简介</a></li>
-				<li class="title-content"><a href="pages/words.html">留言板</a></li>
+				<li class="title-content title-item"><a href="index.php">主页</a></li>
+				<li class="title-content"><a href="pages/articles.php">文章</a></li>
+				<li class="title-content"><a href="pages/photos.php">相册</a></li>
+				<li class="title-content"><a href="pages/time.php">足迹</a></li>
+				<li class="title-content"><a href="pages/personal.php">个人简介</a></li>
+				<li class="title-content"><a href="pages/words.php">留言板</a></li>
 			</ul>
 			<ul id="mylink">
 				<a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=t46Hg4KHjoWFhvfGxpnU2No" style="text-decoration:none;" target="_blank"><li class="iconfont">&#xe605;</li></a>
@@ -37,25 +37,29 @@
 		</div>
 		<div class="container">
 			<h2>近期文章:</h2><br>
-			<?php
-				require_once "phpServer/conn.php";
-				$sql="select * from article ORDER BY time DESC limit 0,3 ";
-				$re=mysqli_query($link,$sql);
-				foreach ($re as $row) {
-			?>
-				<article class="article-show">
-					<h2><a href=""><?php echo $row['title'];?></a></h2>
-	                <p><?php echo mb_substr($row['content'],0,180,'utf-8')."......";?></p>
-		            <div class="article-foot">
-			            <a href="phpServer/support.php?id=<?php echo $row['id']?>"><i class="iconfont">&#xe603;</i><span><?php echo $row['support'];?></span></a>
-			            <i class="iconfont">&#xe606;</i><span><?php echo $row['comments'];?></span>
-			            <i class="iconfont">&#xe608;</i><span>1</span>
-			            <span class="artile-time"><?php echo $row['time'];?></span>			            
-	                </div>
-				</article>
-			<?php  };
-				mysqli_close($link);
-			?>
+			<div id="bigbox">
+				<?php
+					require_once "phpServer/conn.php";
+					$sql="select * from article ORDER BY time DESC limit 0,3 ";
+					$re=mysqli_query($link,$sql);
+					foreach ($re as $row) {
+				?>
+				<div class="smallbox">
+					<article class="article-show">
+						<h2><a href=""><?php echo $row['title'];?></a></h2>
+		                <p><?php echo mb_substr($row['content'],0,180,'utf-8')."......";?></p>
+			            <div class="article-foot">
+				            <a href="phpServer/support.php?id=<?php echo $row['id']?>"><i class="iconfont">&#xe603;</i><span><?php echo $row['support'];?></span></a>
+				            <i class="iconfont">&#xe606;</i><span><?php echo $row['comments'];?></span>
+				            <i class="iconfont">&#xe608;</i><span>1</span>
+				            <span class="artile-time"><?php echo $row['time'];?></span>			            
+		                </div>
+					</article>
+				</div>
+				<?php  };
+					mysqli_close($link);
+				?>
+			</div>
 		</div>
 	</div>
 	<div id="footer" class="container">
@@ -75,5 +79,6 @@
 		<a href="javascript:goTop();" class="jump-top"></a>
 	</div>
 	<script type="text/javascript" src="js/script.js"></script>
+	<script type="text/javascript" src="js/waterfall.js"></script>
 </body>
 </html>

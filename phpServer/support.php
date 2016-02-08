@@ -9,7 +9,7 @@
 		$res=mysqli_query($link,$sql);
 	}
 	if($re){
-        echo "<script>alert('点赞成功');window.location=document.referrer;</script>";
+        echo "<script>alert('感谢您的赞！');window.location=document.referrer;</script>";
     }else{
         echo "<script>alert('点赞失败');history.go(-1);</script>";
     }

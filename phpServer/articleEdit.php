@@ -9,11 +9,11 @@
     <div id="top-fix">
         <div class="container">
             <ul>
-                <li class="title-content" id="left-icon"><a href="../index.html"><div>博客</div></a></li>
+                <li class="title-content" id="left-icon"><a href="../index.php"><div>博客</div></a></li>
                 <li class="title-control"><a href="">后台管理</a></li>
             </ul>
             <ul id="mylink">
-                <a href="../index.html" class="mylink-li"><li class="sign">退出</li></a>
+                <a href="../index.php" class="mylink-li"><li class="sign">退出</li></a>
             </ul>
         </div>
     </div>

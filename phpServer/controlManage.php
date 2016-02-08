@@ -9,11 +9,11 @@
 	<div id="top-fix">
 		<div class="container">
 			<ul>
-				<li class="title-content" id="left-icon"><a href="../index.html"><div>博客</div></a></li>
+				<li class="title-content" id="left-icon"><a href="../index.php"><div>博客</div></a></li>
 				<li class="title-control"><a href="">后台管理</a></li>
 			</ul>
 			<ul id="mylink">
-				<a href="../index.html" class="mylink-li"><li class="sign">退出</li></a>
+				<a href="../index.php" class="mylink-li"><li class="sign">退出</li></a>
 			</ul>
 		</div>
 	</div>
@@ -50,7 +50,7 @@
 	        		if ($current_page <= 1){
 	        			$current_page = 1;
 	        		}
-	        		elseif ($current_page >= $sum_page){
+	        		else if ($current_page >= $sum_page){
 	        			$current_page = $sum_page;
 	        		}
 	        	}
@@ -60,21 +60,20 @@
 	        	
 	        	$start_num = ($current_page - 1) * PAGE_SIZE;
 	        	
-	        	$query = "select * from article limit ".$start_num.", ".PAGE_SIZE;
+	        	$query = "select * from article ORDER BY time DESC limit ".$start_num.", ".PAGE_SIZE;
 	        	 
 	        	$result = $db->query($query);
 	        	
 	        	while ($row = $result->fetch_assoc()){
 	        ?>
-	        		<li><span class="manage-title">
-	        				<i class='iconfont'>&#xe611;</i><a href="articleEdit.php?id=<?php echo $row['id']?>"><?php echo $row['title']?></a>
-	        			</span>
-	        			<span class="manage-time"><?php echo $row['time']?></span>
-	        			<span class="manage-setting"><a href="articleEdit.php?id=<?php echo $row['id']?>">编辑</a>
-	                    							 <a href="articleDelete.php?id=<?php echo $row['id']?>">删除</a>
-	                   	</span>
-	                </li>
-	        	
+        		<li><span class="manage-title">
+        				<i class='iconfont'>&#xe611;</i><a href="articleEdit.php?id=<?php echo $row['id']?>"><?php echo $row['title']?></a>
+        			</span>
+        			<span class="manage-time"><?php echo $row['time']?></span>
+        			<span class="manage-setting"><a href="articleEdit.php?id=<?php echo $row['id']?>">编辑</a>
+                    							 <a href="articleDelete.php?id=<?php echo $row['id']?>">删除</a>
+                   	</span>
+                </li>
 	        <?php
 	        	}
 	        	
