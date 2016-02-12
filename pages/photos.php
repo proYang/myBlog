@@ -42,8 +42,7 @@
 		<p>© 2016 proYang&PeiLi</p>
 	</div>
 	<div id="goTop">
-		<a href="javascript:goTop();" class="jump-top"></a>
+		<a class="jump-top"></a>
 	</div>
-	<script type="text/javascript" src="../js/script.js"></script>
 </body>
 </html>

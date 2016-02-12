@@ -46,8 +46,8 @@
 				?>
 				<div class="smallbox">
 					<article class="article-show">
-						<h2><a href=""><?php echo $row['title'];?></a></h2>
-		                <p><?php echo mb_substr($row['content'],0,180,'utf-8')."......";?></p>
+						<h2><a href="pages/article-pages.php?id=<?php echo $row['id']?>"><?php echo $row['title'];?></a></h2>
+		                <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<?php echo mb_substr($row['content'],0,180,'utf-8')."......";?></p>
 			            <div class="article-foot">
 				            <a href="phpServer/support.php?id=<?php echo $row['id']?>"><i class="iconfont">&#xe603;</i><span><?php echo $row['support'];?></span></a>
 				            <i class="iconfont">&#xe606;</i><span><?php echo $row['comments'];?></span>
@@ -76,9 +76,8 @@
 		<p>© 2016 proYang&PeiLi</p>
 	</div>
 	<div id="goTop">
-		<a href="javascript:goTop();" class="jump-top"></a>
+		<a class="jump-top"></a>
 	</div>
-	<script type="text/javascript" src="js/script.js"></script>
 	<script type="text/javascript" src="js/waterfall.js"></script>
 </body>
 </html>

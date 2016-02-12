@@ -2,8 +2,8 @@
 <html lang="zh-cn">
 <head>
 	<meta charset="UTF-8">
-	<title>myBlog|足迹</title>
-	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<title>myBlog|文章</title>
+	<link rel="stylesheet" type="text/css" href="../css/style.css">	
 </head>
 <body>
 	<div id="top-fix">
@@ -11,9 +11,9 @@
 			<ul>
 				<li class="title-content" id="left-icon"><a href=""><div>博客</div></a></li>
 				<li class="title-content"><a href="../index.php">主页</a></li>
-				<li class="title-content"><a href="articles.php">文章</a></li>
+				<li class="title-content title-item"><a href="articles.php">文章</a></li>
 				<li class="title-content"><a href="photos.php">相册</a></li>
-				<li class="title-content title-item"><a href="time.php">足迹</a></li>
+				<li class="title-content"><a href="time.php">足迹</a></li>
 				<li class="title-content"><a href="personal.php">个人简介</a></li>
 				<li class="title-content"><a href="words.php">留言板</a></li>
 			</ul>
@@ -27,7 +27,39 @@
 			</ul>
 		</div>
 	</div>
+	<div id="main">
+		<div class="container">
+		<?php
+			$category=(int)$_GET['category'];
+			require_once "../phpServer/conn.php";
+			$sql = "select name from terms where term_id = $category";
+			$re=mysqli_query($link,$sql);
+			$arr=mysqli_fetch_assoc($re);
+			echo "<h2>".$arr['name'].":</h2><br>";
+			echo "<div id='bigbox'>";
 
+			$sql="select * from article where category = $category ORDER BY time DESC";
+			$re=mysqli_query($link,$sql);
+			foreach($re as $row) {
+		?>
+			<div class="smallbox">
+				<article id="articles-category" class="article-show">
+					<h2><a href="article-pages.php?id=<?php echo $row['id']?>"><?php echo $row['title'];?></a></h2>
+	                <p><?php echo mb_substr($row['content'],0,180,'utf-8')."......";?></p>
+		            <div class="article-foot">
+			            <a href="../phpServer/support.php?id=<?php echo $row['id']?>"><i class="iconfont">&#xe603;</i><span><?php echo $row['support'];?></span></a>
+			            <i class="iconfont">&#xe606;</i><span><?php echo $row['comments'];?></span>
+			            <i class="iconfont">&#xe608;</i><span>1</span>
+			            <span class="artile-time"><?php echo $row['time'];?></span>			            
+	                </div>
+				</article>
+			</div>
+				<?php  };
+					mysqli_close($link);
+				?>
+				</div>
+		</div>
+	</div>
 	<div id="footer" class="container">
 		<div id="footer-link">
 			<ul>
@@ -44,5 +76,7 @@
 	<div id="goTop">
 		<a class="jump-top"></a>
 	</div>
+	<script type="text/javascript" src="../js/waterfall.js"></script>
+	<script type="text/javascript" src="../js/goTop.js"></script>
 </body>
 </html>
