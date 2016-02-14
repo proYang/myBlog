@@ -34,9 +34,20 @@
 				<!-- 文章内容 -->
 					<?php 
 		                $id=(int)$_GET['id'];
+		                $tem_id=$id;
+		                $type=$_GET['type'];//0和1分别代表上一页和下一页
 		                require_once "../phpServer/conn.php";
-		                $sql="select * from article where id = '$id'";
-		                $re=mysqli_query($link,$sql);//执行sql语句
+		                $sql="select count(*) from article";
+		                $num=mysqli_query($link,$sql);
+
+		                do{
+		                	$tem_id=$type?++$tem_id:--$tem_id;
+		                	if ($tem_id<1||$tem_id>$num) {
+		                		$tem_id=$id;
+		                	}
+		                	$sql="select * from article where id = '$tem_id'";
+		                	
+		                }while(!($re=mysqli_query($link,$sql)))//执行sql语句
 		                $arr=mysqli_fetch_assoc($re);
             		?>
             		<h1><a href="##"><?php echo $arr['title']?></a></h1>
@@ -47,10 +58,12 @@
 	                        echo "<span>分类:".$arrs['name']."</span>";
                     	?>
                     <span><?php echo $arr['time'];?></span>
-            		<p>&nbsp&nbsp&nbsp&nbsp&nbsp<?php echo $arr['content'];?></p>
+            		<p>&nbsp&nbsp&nbsp&nbsp&nbsp<?php echo $arr['content'];?></p>   <br/><!--添了一个换行符-->
+            		<a href="article-pages.php?id=<?php echo $tem_id?>&type=0">上一页</a>
+            		<a href="article-pages.php?id=<?php echo $tem_id?>&type=1">下一页</a>
 				</article>
 				<div class="article-foot">
-		            <a href="../phpServer/support.php?id=<?php echo $id?>"><i class="iconfont">&#xe603;</i><span><?php echo $arr['support'];?></span></a>
+		            <a href="../phpServer/support.php?id=<?php echo $tem_id?>"><i class="iconfont">&#xe603;</i><span><?php echo $arr['support'];?></span></a>
 		            <i class="iconfont">&#xe606;</i><span><?php echo $arr['comments'];?></span>
 		            <i class="iconfont">&#xe608;</i><span>1</span>
 		            <div>
