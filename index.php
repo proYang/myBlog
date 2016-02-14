@@ -49,10 +49,9 @@
 						<h2><a href="pages/article-pages.php?id=<?php echo $row['id']?>"><?php echo $row['title'];?></a></h2>
 		                <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<?php echo mb_substr($row['content'],0,180,'utf-8')."......";?></p>
 			            <div class="article-foot">
-				            <a href="phpServer/support.php?id=<?php echo $row['id']?>"><i class="iconfont">&#xe603;</i><span><?php echo $row['support'];?></span></a>
-				            <i class="iconfont">&#xe606;</i><span><?php echo $row['comments'];?></span>
-				            <i class="iconfont">&#xe608;</i><span>1</span>
-				            <span class="artile-time"><?php echo $row['time'];?></span>			            
+				            <a href="phpServer/support.php?id=<?php echo $row['id']?>"><i class="iconfont">&#xe603;</i><span><?php echo $row['support'];?></span></a>&nbsp
+				            <a href="pages/article-pages.php?id=<?php echo $row['id']?>"><i class="iconfont">&#xe606;</i><span><?php echo $row['comments'];?></span>
+				            <span class="artile-time"><?php echo $row['time'];?></span></a>          
 		                </div>
 					</article>
 				</div>
