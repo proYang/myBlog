@@ -35,20 +35,28 @@
 					<?php 
 		                $id=(int)$_GET['id'];
 		                $tem_id=$id;
-		                $type=$_GET['type'];//0和1分别代表上一页和下一页
+		                @$type=$_GET['type'];//0和1分别代表上一页和下一页
 		                require_once "../phpServer/conn.php";
-		                $sql="select count(*) from article";
-		                $num=mysqli_query($link,$sql);
-
+		                // $sql="select count(*) as counts from article where id<=$id";
+		                // $tempArr= mysqli_fetch_assoc(mysqli_query($link,$sql));
+		                // print_r($tempArr);
+		                // $tem_id=$tempArr['counts'];
+		                // echo($tem_id);
+		                $sql="select max(id) as counts from article";
+		                $numArr= mysqli_fetch_assoc(mysqli_query($link,$sql));
+		                $num=$numArr['counts'];
+		                // 当文章id不连续时，继续循环，直到找到
+		                // echo($num."/"); 
 		                do{
 		                	$tem_id=$type?++$tem_id:--$tem_id;
 		                	if ($tem_id<1||$tem_id>$num) {
 		                		$tem_id=$id;
 		                	}
 		                	$sql="select * from article where id = '$tem_id'";
-		                	
-		                }while(!($re=mysqli_query($link,$sql)))//执行sql语句
+		                	$re=mysqli_query($link,$sql);
+		                }while(mysqli_num_rows($re)==0);
 		                $arr=mysqli_fetch_assoc($re);
+		                // echo($tem_id);
             		?>
             		<h1><a href="##"><?php echo $arr['title']?></a></h1>
             			<?php
@@ -58,17 +66,14 @@
 	                        echo "<span>分类:".$arrs['name']."</span>";
                     	?>
                     <span><?php echo $arr['time'];?></span>
-            		<p>&nbsp&nbsp&nbsp&nbsp&nbsp<?php echo $arr['content'];?></p>   <br/><!--添了一个换行符-->
-            		<a href="article-pages.php?id=<?php echo $tem_id?>&type=0">上一页</a>
-            		<a href="article-pages.php?id=<?php echo $tem_id?>&type=1">下一页</a>
+            		<p>&nbsp&nbsp&nbsp&nbsp&nbsp<?php echo $arr['content'];?></p>            		
 				</article>
 				<div class="article-foot">
-		            <a href="../phpServer/support.php?id=<?php echo $tem_id?>"><i class="iconfont">&#xe603;</i><span><?php echo $arr['support'];?></span></a>
-		            <i class="iconfont">&#xe606;</i><span><?php echo $arr['comments'];?></span>
-		            <i class="iconfont">&#xe608;</i><span>1</span>
-		            <div>
-		            	<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a><a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a><a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a></div>
-		            </div>		            
+		            <div class="article_comment"><a href="../phpServer/support.php?id=<?php echo $tem_id?>"><i class="iconfont">&#xe603;</i><span><?php echo $arr['support'];?></span></a></div>
+		            <div class="article_comment"><i class="iconfont">&#xe606;</i><span><?php echo $arr['comments'];?></span></div>
+		            <div id="share_button" class="article_comment"><i class="iconfont">&#xe608;</i><span>
+		            </span></div>
+		            <div id="share_button_box" class="bdsharebuttonbox"><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a><a href="#" class="bds_mail" data-cmd="mail" title="分享到邮件分享"></a><a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a></div>
                 </div>
 				<div id="comentsbox">
 					<form action="">
@@ -79,6 +84,14 @@
 					</form>
 				</div>
 			</div>
+			<div id="pre-arcitle">
+				<span><?php if ($tem_id==1) {echo $tem_id;}else{echo $tem_id-1;}?>/<?php echo $num;?></span>
+				<a href="article-pages.php?id=<?php echo $tem_id?>&type=0"></a>
+			</div>
+			<div id="next-arcitle">
+				<span><?php if ($tem_id==$num) {echo $tem_id;}else{echo $tem_id+1;}?>/<?php echo $num;?></span>
+            	<a href="article-pages.php?id=<?php echo $tem_id?>&type=1"></a>
+            </div>
 			<div id="cate_link">
 			<!-- 文章分类清单 -->
 				<ul>
@@ -118,6 +131,7 @@
 		<a class="jump-top"></a>
 	</div>
 	<script type="text/javascript" src="../js/goTop.js"></script>
-	<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"32"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+	<script type="text/javascript" src="../js/showButton.js"></script>	
+	<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
 </body>
 </html>

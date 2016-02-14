@@ -30,7 +30,7 @@ body{
     box-shadow: 0 0 5px #444;
 }
 .container{
-    position: relative;
+    /*position: relative;*/
     width: 960px;
     margin: 0 auto;
     padding: 0;
@@ -153,6 +153,7 @@ body{
     color: #666;
 }
 .article-foot{
+	overflow: hidden;
 	padding: 12px 8px;
 }
 .article-foot span{
@@ -238,6 +239,7 @@ body{
     color: #fff;
 }
 #control{
+	position: relative;
 	top: 80px;
 	overflow: hidden;
 }
@@ -627,4 +629,83 @@ body{
 }
 #comentsbox >form >input[type="submit"]:hover{
 	border: 1px solid #333;
+}
+.article_comment,
+.bdsharebuttonbox{
+	margin:0 4px;
+	float: left;
+	cursor: pointer;
+}
+.article_comment i{	
+	font-size: 22px!important;
+	font-weight: 900!important;
+}
+.bdsharebuttonbox{
+	display: none;
+}
+.bdsharebuttonbox>a{
+	margin: 0 6px 0 0!important;
+}
+#pre-arcitle,
+#next-arcitle{
+	position: fixed;
+    bottom: 25%;
+    width: 50px;
+    height: 50px;
+}
+#pre-arcitle{
+	left: 5px;	
+}
+#next-arcitle{
+	right: 5px;
+}
+#pre-arcitle>a,
+#next-arcitle>a{
+	display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 3px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+	background-position: center;
+}
+#pre-arcitle>a{
+	background-image: url(../img/go-top2.png);
+	transform: rotate(-90deg);
+}
+#next-arcitle>a{
+	background-image: url(../img/go-top2.png);
+	transform: rotate(90deg);
+}
+#pre-arcitle:hover>a{
+	background-image: url(../img/go-top1.png);	
+	transform: rotate(-90deg);
+	background-color: #999;
+}
+#next-arcitle:hover>a{
+	background-image: url(../img/go-top1.png);
+	transform: rotate(90deg);
+	background-color: #999;
+}
+#pre-arcitle:hover>span,
+#next-arcitle:hover>span{
+	display: inline-block;
+}
+#pre-arcitle>span,
+#next-arcitle>span{
+    width: 50px;
+    height: 50px;    
+	border-radius: 3px;
+	position: absolute;
+    line-height: 50px;
+    text-align: center;
+    display: none;
+    background: #666;
+    color: #FFF;
+}
+#pre-arcitle>span{
+	left: 48px;
+}
+#next-arcitle>span{
+	right: 48px;
 }
