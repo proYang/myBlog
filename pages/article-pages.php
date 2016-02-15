@@ -31,7 +31,7 @@
 		<div id="article-content" class="container">
 			<div id="content">
 				<article>
-				<!-- 文章内容 -->
+<!-- 文章内容 -->
 					<?php 
 		                $id=(int)$_GET['id'];
 		                $tem_id=$id;
@@ -47,9 +47,11 @@
 		                $num=$numArr['counts'];
 		                // 当文章id不连续时，继续循环，直到找到
 		                // echo($num."/"); 
+		                // echo($type."/");
+		                // echo($tem_id."/");
 		                do{
 		                	$tem_id=$type?++$tem_id:--$tem_id;
-		                	if ($tem_id<1||$tem_id>$num) {
+		                	if ($tem_id<1||$tem_id>$num||$type==null) {
 		                		$tem_id=$id;
 		                	}
 		                	$sql="select * from article where id = '$tem_id'";
@@ -68,7 +70,7 @@
                     <span><?php echo $arr['time'];?></span>
             		<p>&nbsp&nbsp&nbsp&nbsp&nbsp<?php echo $arr['content'];?></p>            		
 				</article>
-				<div class="article-foot">
+				<div class="article-foot" id="article-pages">
 		            <div class="article_comment"><a href="../phpServer/support.php?id=<?php echo $tem_id?>"><i class="iconfont">&#xe603;</i><span><?php echo $arr['support'];?></span></a></div>
 		            <div class="article_comment"><i class="iconfont">&#xe606;</i><span><?php echo $arr['comments'];?></span></div>
 		            <div id="share_button" class="article_comment"><i class="iconfont">&#xe608;</i><span>
@@ -76,10 +78,31 @@
 		            <div id="share_button_box" class="bdsharebuttonbox"><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a><a href="#" class="bds_mail" data-cmd="mail" title="分享到邮件分享"></a><a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a></div>
                 </div>
 				<div id="comentsbox">
-					<form action="">
-						<input type="text" placeholder="姓名(必填)">
-						<input type="text" placeholder="邮箱(必填)">
-						<textarea name="" placeholder="说点什么吧"></textarea>
+<!-- 获取文章评论 -->
+					<ul>
+						<?php
+							$sql="select * from comment where aid=".$tem_id;
+							$rec=mysqli_query($link,$sql);
+							foreach ($rec as $row) {
+						?>
+							<li>
+								<div class="comment_img"><i class="iconfont">&#xe612;</i></div>
+								<div class="comment_right">
+									<div class="comment_name"><?php echo $row['name'];?></div>
+									<div class="comment_time"><?php echo $row['time'];?></div>
+									<p class="comment_content"><?php echo $row['content'];?></p>
+								</div>
+							</li>
+						<?php	
+							}
+						?>
+					</ul>
+<!-- 提交文章评论 -->
+					<form action="../phpServer/commentCreat.php" method="post">
+						<input type="text" name="name" placeholder="姓名(必填)">
+						<input type="text" name="mail" placeholder="邮箱(必填)">						
+						<textarea name="content" placeholder="说点什么吧"></textarea>
+						<input type="hidden" name="id" value='<?php echo $tem_id;?>'>
 						<input type="submit" value="发布">
 					</form>
 				</div>
@@ -131,7 +154,13 @@
 		<a class="jump-top"></a>
 	</div>
 	<script type="text/javascript" src="../js/goTop.js"></script>
-	<script type="text/javascript" src="../js/showButton.js"></script>	
-	<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+	<script type="text/javascript" src="../js/showButton.js"></script>
+    <script type="text/javascript">  
+            window.onload = shareCode;
+             function shareCode(){
+             	window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+             }
+    </script> 
+	<script></script>
 </body>
 </html>

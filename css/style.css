@@ -587,6 +587,44 @@ body{
 	color: #999;
 	transition: all .3s; 
 }
+#article-pages{
+	border-bottom: 1px solid #ddd;
+}
+#comentsbox >ul{
+	min-height: 40px;
+	margin-bottom: 100px;
+}
+#comentsbox >ul >li{
+	overflow: hidden;
+	padding:20px 0;
+	border-bottom: 1px solid #ddd;
+}
+.comment_img,.comment_right{
+	float: left;
+	margin-right: 10px;
+}
+.comment_img>i{
+	font-size: 40px;
+	color: #111;
+}
+.comment_name{
+	margin-top: 5px;
+	color: #555;
+	font-size: 15px;
+	font-weight: 600;
+	letter-spacing: 1px;
+}
+.comment_time{
+	margin-top: 3px;
+	color: #999;
+	font-size: 14px;
+}
+.comment_content{
+	margin-top: 5px;
+	color: #333;
+	font-size: 15px;
+	letter-spacing: 1px;
+}
 #comentsbox >form >input[type="text"]{
 	margin: 0 0 10px 0;
 	border: 1px solid #ddd;
