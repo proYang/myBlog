@@ -244,7 +244,7 @@ body{
 	overflow: hidden;
 }
 #control-menu{
-	margin: 10px 0 0 10px;
+	margin: 10px 0 10px 10px;
 	float: left;
 	width: 170px;
 	background-color: #fff;
@@ -461,6 +461,9 @@ body{
 .manage-title a:hover{
 	text-decoration: underline;
 }
+#area-words{
+	padding: 30px 50px 20px 50px;
+}
 
 /*登录框*/
 #loginbody{
@@ -602,6 +605,9 @@ body{
 .comment_img,.comment_right{
 	float: left;
 	margin-right: 10px;
+}
+.comment_right{
+	width: 540px;
 }
 .comment_img>i{
 	font-size: 40px;

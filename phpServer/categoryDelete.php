@@ -1,4 +1,11 @@
 <?php
+    // 登录验证
+    session_start();
+    if(!isset($_SESSION['temp'])){
+            echo "<script>location.href='../pages/login.html'</script>";
+    }
+?>
+<?php
     require_once 'conn.php';
     $id=(int)$_GET['id'];
     $sql="delete from terms where term_id = '$id'";

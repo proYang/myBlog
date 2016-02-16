@@ -76,5 +76,10 @@
 	</div>
 	<script type="text/javascript" src="../js/waterfall.js"></script>
 	<script type="text/javascript" src="../js/goTop.js"></script>
+	<script type="text/javascript">
+		window.onload=function(){
+			goTopMain();
+		}
+	</script>>
 </body>
 </html>

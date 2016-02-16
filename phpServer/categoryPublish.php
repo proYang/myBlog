@@ -1,4 +1,11 @@
 <?php
+        // 登录验证
+    session_start();
+    if(!isset($_SESSION['temp'])){
+            echo "<script>location.href='../pages/login.html'</script>";
+    }
+?>
+<?php
     require_once'conn.php';
     $name = $_GET['name'];
     $sql = "insert into terms (name) values ('$name')";

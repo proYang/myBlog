@@ -1,4 +1,11 @@
 <?php
+// 验证登录
+    session_start();
+    if(!isset($_SESSION['temp'])){
+            echo "<script>location.href='../pages/login.html'</script>";
+    }
+?>
+<?php
     require_once 'conn.php';
     $id=(int)$_GET['id'];
     $sql="delete from article where id = '$id'";

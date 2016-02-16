@@ -1,4 +1,11 @@
 <?php
+    // 验证登录
+    session_start();
+    if(!isset($_SESSION['temp'])){
+            echo "<script>location.href='../pages/login.html'</script>";
+    }
+?>
+<?php
     require_once'conn.php';
     date_default_timezone_set('Asia/Chongqing');
     $selectname = $_POST['selectname'];

@@ -121,8 +121,7 @@
 				<p>文章分类</p>
 				<?php
 					$sql = "select * from terms ORDER BY term_id ASC";
-					$re = mysqli_query($link,$sql);
-					
+					$re = mysqli_query($link,$sql);					
 					foreach ($re as $row) {
 						$sql = "select * from article where category=".$row['term_id'];
 						$res = mysqli_query($link,$sql);
@@ -153,14 +152,16 @@
 	<div id="goTop">
 		<a class="jump-top"></a>
 	</div>
-	<script type="text/javascript" src="../js/goTop.js"></script>
+    <script type="text/javascript" src="../js/goTop.js"></script>
 	<script type="text/javascript" src="../js/showButton.js"></script>
     <script type="text/javascript">  
-            window.onload = shareCode;
+            window.onload = function(){ 
+            	goTopMain();
+            	shareCode();
+            }
              function shareCode(){
              	window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
              }
     </script> 
-	<script></script>
 </body>
 </html>

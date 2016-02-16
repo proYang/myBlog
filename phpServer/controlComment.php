@@ -1,3 +1,10 @@
+<?php
+	// 登录验证
+	session_start();
+	if(!isset($_SESSION['temp'])){
+			echo "<script>location.href='../pages/login.html'</script>";
+	}
+?>
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
@@ -13,7 +20,7 @@
 				<li class="title-control"><a href="">后台管理</a></li>
 			</ul>
 			<ul id="mylink">
-				<a href="../index.php" class="mylink-li"><li class="sign">退出</li></a>
+				<a href="deleteSession.php" class="mylink-li"><li class="sign">退出</li></a>
 			</ul>
 		</div>
 	</div>
@@ -29,7 +36,31 @@
 				<li class="control-content" id="menu-words"><a href="controlComment.php"><i class="iconfont">&#xe60f;</i>评论审核</a></li>
 			</ul>
 		</div>
-		<div id="area-words" class="control-area">words</div>
+		<div class="control-area">
+			<ul  id="area-words">
+			<?php
+				require_once "conn.php";
+				$sql="select * from article where comments > 0 ORDER BY time DESC";
+				$re=mysqli_query($link,$sql);
+				foreach ($re as $row) {	
+					echo "<li><dt>".$row['title']."</dt>";
+					$sql="select * from comment where aid=".$row['id'];
+					$com=mysqli_query($link,$sql);
+					foreach ($com as $row) {
+			?>		<dd>
+						<div class="comment_name"><?php echo $row['name'];?></div>
+						<div class="comment_time"><?php echo $row['mail'];?></div>
+						<div class="comment_time"><?php echo $row['time'];?></div>
+						<p class="comment_content"><?php echo $row['content'];?></p>
+					</dd>
+			<?php
+					}
+					echo "</li>";
+				}
+			?>
+			</ul>
+		</div>
 	</div>
+	<script type="text/javascript" src="../js/cateShow.js"></script>
 </body>
 </html>

@@ -18,6 +18,9 @@
 
                 if($num)  
                 {  
+                    session_start();
+                    $_SESSION['temp'] = $user;
+                    // echo "<script>alert('".$_SESSION['temp']."');</script>";
                     $row = mysqli_fetch_array($result);  //将数据以索引方式储存在数组中 
                     echo "<script>location.href='../phpServer/controlWrite.php'</script>";
                 }  
