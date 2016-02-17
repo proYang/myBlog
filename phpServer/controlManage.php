@@ -77,8 +77,10 @@
         				<i class='iconfont'>&#xe611;</i><a href="articleEdit.php?id=<?php echo $row['id']?>"><?php echo $row['title']?></a>
         			</span>
         			<span class="manage-time"><?php echo $row['time']?></span>
-        			<span class="manage-setting"><a href="articleEdit.php?id=<?php echo $row['id']?>">编辑</a>
-                    							 <a href="articleDelete.php?id=<?php echo $row['id']?>">删除</a>
+        			<span class="manage-setting">
+						<a href="articleComment.php?id=<?php echo $row['id']?>">评论(<?php echo $row['comments']?>)</a>
+	        			<a href="articleEdit.php?id=<?php echo $row['id']?>">编辑</a>
+        				<a href="articleDelete.php?id=<?php echo $row['id']?>">删除</a>
                    	</span>
                 </li>
 	        <?php
