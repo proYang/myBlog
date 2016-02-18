@@ -52,10 +52,6 @@
 					mysqli_close($link);
 				?>
 				</div>
-
-				
-				
-			
 		</div>
 	</div>
 	<div id="footer" class="container">
@@ -76,10 +72,5 @@
 	</div>
 	<script type="text/javascript" src="../js/waterfall.js"></script>
 	<script type="text/javascript" src="../js/goTop.js"></script>
-	<script type="text/javascript">
-		window.onload=function(){
-			goTopMain();
-		}
-	</script>>
 </body>
 </html>

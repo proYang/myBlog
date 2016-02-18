@@ -718,8 +718,10 @@ body{
 #comentsbox >form >input[type="submit"]:hover{
 	border: 1px solid #333;
 }
-.article_comment,
-.bdsharebuttonbox{
+#share_button_box{
+	display: none;
+}
+.article_comment{
 	margin:0 4px;
 	float: left;
 	cursor: pointer;
@@ -727,12 +729,6 @@ body{
 .article_comment i{	
 	font-size: 22px!important;
 	font-weight: 900!important;
-}
-.bdsharebuttonbox{
-	display: none;
-}
-.bdsharebuttonbox>a{
-	margin: 0 6px 0 0!important;
 }
 #pre-arcitle,
 #next-arcitle{
@@ -796,4 +792,94 @@ body{
 }
 #next-arcitle>span{
 	right: 48px;
+}
+
+
+/*个人简介*/
+#personal_left{
+	width: 820px;
+	padding: 0 70px;
+}
+#personal_con{
+	overflow: hidden;
+	background-color: #fff;
+}
+#myword >h4{
+	padding:20px 70px;
+}
+#personal_left >h4{
+	padding:10px 0;
+}
+#personal_left >p,
+#personal_motto{
+	color: #555;
+}
+#personal_left >p{
+	letter-spacing: 2px;
+	word-wrap: break-word;
+	padding: 0 15px 0 20px;
+}
+#imessage >p{
+	color: #777;
+	padding: 2px;
+	text-align: center;
+}
+#imessage >p >a{
+	color: #222;
+}
+#personal_share{
+	padding: 0 336px;
+	height: 32px;
+}
+#personal_con >h4{
+	padding: 20px 0;
+	text-align: center;
+}
+#personal_con{
+	padding-bottom: 60px;
+}
+#area-messgae{
+	width:660px;
+	padding: 30px 50px 20px 50px;
+}
+#imessage_form>div{
+	position: relative;
+	padding: 10px 0;
+}
+#imessage_form >div >span{
+	padding-right: 10px;
+	display: inline-block;
+	width: 80px;
+	text-align: right;
+}
+#imessage_form >div >input{
+    border: 1px solid #999;
+    padding: 0 10px;
+    height: 28px;
+    width: 250px;
+    font-size: 14px;
+    display: inline-block;
+    outline: none;
+    font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+}
+#imessage_form >div >textarea{
+	margin-left: 90px;
+	border: 1px solid #999;
+    padding: 5px 10px;
+    width: 530px;
+    display: inline-block;
+    font-size: 14px;
+    font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+}
+#imessage_textarea1{
+	resize: none;
+	height: 50px;
+}
+#imessage_textarea2{
+	resize: none;
+	height: 200px;
+}
+.imessage_span{
+	position: absolute;
+	top: 10px;
 }

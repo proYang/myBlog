@@ -1,4 +1,4 @@
-function goTopMain(){
+window.onload = function(){ 
 	var top = document.querySelector("#goTop");
 	var timer = null;
 	var clientHeight=document.documentElement.clientHeight;

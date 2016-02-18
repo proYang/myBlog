@@ -74,8 +74,20 @@
 		            <div class="article_comment"><a href="../phpServer/support.php?id=<?php echo $tem_id?>"><i class="iconfont">&#xe603;</i><span><?php echo $arr['support'];?></span></a></div>
 		            <div class="article_comment"><i class="iconfont">&#xe606;</i><span><?php echo $arr['comments'];?></span></div>
 		            <div id="share_button" class="article_comment"><i class="iconfont">&#xe608;</i><span>
-		            </span></div>
-		            <div id="share_button_box" class="bdsharebuttonbox"><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a><a href="#" class="bds_mail" data-cmd="mail" title="分享到邮件分享"></a><a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a></div>
+						<a class="jiathis_counter_style"></a></span></div>
+					<!-- JiaThis Button BEGIN -->
+					<div  id="share_button_box" class="jiathis_style_24x24">
+						<a class="jiathis_button_qzone"></a>
+						<a class="jiathis_button_tsina"></a>
+						<a class="jiathis_button_tqq"></a>
+						<a class="jiathis_button_weixin"></a>
+						<a class="jiathis_button_cqq"></a>
+						<a class="jiathis_button_douban"></a>
+						<a class="jiathis_button_email"></a>
+						<a class="jiathis_button_copy"></a>
+					</div>
+					<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=2084374" charset="utf-8"></script>
+					<!-- JiaThis Button END -->
                 </div>
 				<div id="comentsbox">
 <!-- 获取文章评论 -->
@@ -153,15 +165,6 @@
 		<a class="jump-top"></a>
 	</div>
     <script type="text/javascript" src="../js/goTop.js"></script>
-	<script type="text/javascript" src="../js/showButton.js"></script>
-    <script type="text/javascript">  
-            window.onload = function(){ 
-            	goTopMain();
-            	shareCode();
-            }
-             function shareCode(){
-             	window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-             }
-    </script> 
+	<script type="text/javascript" src="../js/showButton.js"></script>          
 </body>
 </html>

@@ -36,7 +36,38 @@
 				<li class="control-content"><a href="controlComment.php"><i class="iconfont">&#xe60f;</i>评论审核</a></li>
 			</ul>
 		</div>
-		<div id="area-messgae" class="control-area">message</div>
+		<div id="area-messgae" class="control-area">
+			<?php
+                require_once 'conn.php';
+                $sql="select * from user";
+                $re=mysqli_query($link,$sql);//执行sql语句
+                $arr=mysqli_fetch_assoc($re);
+            ?>
+			<form id="imessage_form" method="post" action="messageUpdate.php">
+                <div>
+                	<span>昵称</span><input type="text" name="name" value="<?php echo $arr['name']?>"/>
+                </div>
+                <div>
+                	<span>所在地</span><input type="text" name="address" value="<?php echo $arr['address']?>"/>
+                </div>
+                <div>
+                	<span>职业</span><input type="text" name="profession" value="<?php echo $arr['profession']?>"/>
+                </div>
+                <div>
+                	<span>爱好</span><input type="text" name="hobby" value="<?php echo $arr['hobby']?>"/>
+                </div>
+                <div>
+                	<span class="imessage_span">个性签名</span><textarea name="motto" id="imessage_textarea1"><?php echo $arr['motto']?></textarea>
+                </div>
+                <div>
+                	<span class="imessage_span">个人经历</span><textarea name="experience" id="imessage_textarea2"><?php echo $arr['experience']?></textarea>
+                </div>
+                <input id="write-submit" type="submit" value="确认修改"/>
+            </form>
+            <?php
+				mysqli_close($link);
+			?>
+		</div>
 	</div>
 </body>
 </html>

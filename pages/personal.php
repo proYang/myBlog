@@ -27,7 +27,49 @@
 			</ul>
 		</div>
 	</div>
-
+	<div id="main">
+		<div id="personal_con" class="container">
+			<?php
+				require_once "../phpServer/conn.php";
+				$sql="select * from user";
+				$re=mysqli_query($link,$sql);
+				$arr = mysqli_fetch_assoc($re);
+				// print_r($arr);
+			?>
+			<div id="head-photo"><img src="../img/head-photo.jpg" alt="头像"></div>
+			<div id="imessage">
+				<p><a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=t46Hg4KHjoWFhvfGxpnU2No" style="text-decoration:none;" target="_blank"><?php echo $arr['name'];?></a></p>
+				<p><?php echo $arr['address'];?></p>
+				<p>现在是<?php echo $arr['profession'];?></p>
+				<p>喜欢<?php echo $arr['hobby'];?></p>
+			</div>
+			<acticle id="myword">
+<!-- 从数据库获取用户最新签名 -->
+				<h4>个性签名:</h4>
+				<p id="personal_motto"><?php echo $arr['motto'];?></p>
+				</acticle>
+			<div id="personal_left">
+				<h4>个人经历:</h4>
+				<p>&nbsp&nbsp&nbsp&nbsp&nbsp<?php echo $arr['experience'];?></p>
+			</div>
+			<h4>分享一下</h4>
+				<!-- JiaThis Button BEGIN -->
+			<div id="personal_share" class="jiathis_style_32x32">
+				<a class="jiathis_button_qzone"></a>
+				<a class="jiathis_button_tsina"></a>
+				<a class="jiathis_button_tqq"></a>
+				<a class="jiathis_button_weixin"></a>
+				<a class="jiathis_button_cqq"></a>
+				<a class="jiathis_button_douban"></a>
+				<a class="jiathis_button_email"></a>
+				<a class="jiathis_button_copy"></a>
+			</div>
+				<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=2084374" charset="utf-8"></script>
+					<!-- JiaThis Button END -->
+			</div>
+			
+		</div>
+	</div>
 	<div id="footer" class="container">
 		<div id="footer-link">
 			<ul>
