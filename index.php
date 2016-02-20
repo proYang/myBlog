@@ -29,17 +29,22 @@
 	</div>
 	<div id="main">
 		<div class="container">
+			<?php
+				require_once "phpServer/conn.php";
+				$sql="select * from user";
+				$reu=mysqli_query($link,$sql);
+				$arru = mysqli_fetch_assoc($reu);
+			?>
 			<div id="head-photo"><img src="img/head-photo.jpg" alt="头像"></div>
 			<acticle id="myword">
 <!-- 从数据库获取用户最新签名 -->
-			<p>我们不停的翻弄着回忆,却再也找不回那时的自己,红尘一梦，不再追寻。—————无名</p>
+			<p id="personal_motto"><?php echo $arru['motto'];?></p>
 			</acticle>
 		</div>
 		<div class="container">
 			<h2>近期文章:</h2><br>
 			<div id="bigbox">
 				<?php
-					require_once "phpServer/conn.php";
 					$sql="select * from article ORDER BY time DESC limit 0,3 ";
 					$re=mysqli_query($link,$sql);
 					foreach ($re as $row) {

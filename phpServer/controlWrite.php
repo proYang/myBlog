@@ -55,7 +55,7 @@
 					?>
 				</select>
 				<input type="text" name="title" id="write-title" placeholder="请输入文章标题"/>
-				<textarea name="content" placeholder="请输入文章内容"></textarea>
+				<textarea  name="content" placeholder="请输入文章内容"></textarea>
 			    <input id="write-submit" type="submit" value="发布"/>
 				</form>
 			</div>
