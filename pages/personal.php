@@ -83,8 +83,5 @@
 		</div>
 		<p>© 2016 proYang&PeiLi</p>
 	</div>
-	<div id="goTop">
-		<a class="jump-top"></a>
-	</div>
 </body>
 </html>

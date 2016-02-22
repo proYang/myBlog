@@ -40,7 +40,17 @@
 					<div class="smallbox">
 						<article class="article-show">
 							<h2><a href="article-pages.php?id=<?php echo $row['id']?>"><?php echo $row['title'];?></a></h2>
-			                <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<?php echo mb_substr($row['content'],0,180,'utf-8')."......";?></p>
+							<?php
+								if (!$row['cover']==0) {
+									// 判断封面是否存在
+									$temp=mb_substr($row['content'],0,90,'utf-8')."...";
+									echo "<img src='".$row['cover']."'>";
+									echo "<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp".$temp."</p>";
+			                	}else{
+			                		$temp=mb_substr($row['content'],0,160,'utf-8')."...";
+									echo "<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp".$temp."</p>";
+								}
+							?>
 				            <div class="article-foot">
 					            <a href="../phpServer/support.php?id=<?php echo $row['id']?>"><i class="iconfont">&#xe603;</i><span><?php echo $row['support'];?></span></a>&nbsp
 					            <a href="article-pages.php?id=<?php echo $row['id']?>"><i class="iconfont">&#xe606;</i><span><?php echo $row['comments'];?></span>
@@ -72,5 +82,11 @@
 	</div>
 	<script type="text/javascript" src="../js/waterfall.js"></script>
 	<script type="text/javascript" src="../js/goTop.js"></script>
+	<script>
+		window.onload=function(){
+		waterfall('bigbox','smallbox');
+		backTop();
+		}
+	</script>
 </body>
 </html>

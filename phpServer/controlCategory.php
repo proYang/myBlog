@@ -65,5 +65,10 @@
 		</div>
 	</div>
 	<script type="text/javascript" src="../js/waterfall.js"></script>
+	<script>
+		window.onload=function(){
+		waterfall('bigbox','smallbox');
+		}
+	</script>
 </body>
 </html>

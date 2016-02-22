@@ -165,6 +165,11 @@
 		<a class="jump-top"></a>
 	</div>
     <script type="text/javascript" src="../js/goTop.js"></script>
-	<script type="text/javascript" src="../js/showButton.js"></script>          
+	<script type="text/javascript" src="../js/showButton.js"></script>
+	<script>
+		window.onload=function(){
+		backTop();
+		}
+	</script>         
 </body>
 </html>

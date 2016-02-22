@@ -86,5 +86,10 @@
 		<a class="jump-top"></a>
 	</div>
 	<script src="../js/goTop.js"></script>
+	<script>
+		window.onload=function(){
+		backTop();
+		}
+	</script>
 </body>
 </html>

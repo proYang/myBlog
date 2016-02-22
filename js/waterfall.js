@@ -1,4 +1,3 @@
-waterfall('bigbox','smallbox');
 function waterfall (parent,box) {
 	// 将bigbox下的smallbox全部取出
 	var oParent=document.getElementById(parent);

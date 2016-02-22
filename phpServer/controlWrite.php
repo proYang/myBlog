@@ -38,7 +38,8 @@
 		</div>
 		<div id="area-write" class="control-area">
 			<div id="write-content">
-				<form onsubmit="return myconfirm();" name="article" method="post" action="../phpServer/articlePublish.php">
+
+				<form onsubmit="return myconfirm();" enctype="multipart/form-data" name="article" method="post" action="../phpServer/articlePublish.php">
 				<select name="selectname" id="write-category">
 					<!-- 面向对象zxw -->
 					<?php
@@ -55,6 +56,9 @@
 					?>
 				</select>
 				<input type="text" name="title" id="write-title" placeholder="请输入文章标题"/>
+				<a href="javascript:;" class="a-upload">
+    				<input type="file" name="upfile">上传文章封面
+				</a>
 				<textarea  name="content" placeholder="请输入文章内容"></textarea>
 			    <input id="write-submit" type="submit" value="发布"/>
 				</form>

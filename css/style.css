@@ -138,9 +138,18 @@ body{
 .article-show:hover{
 	box-shadow: 0 0 12px #ddd;
 }
+.article-show:hover>img{
+	opacity: 0.7;
+}
 .article-show a{
 	color: #222;
 	transition:all 0.5s;
+}
+.article-show >img{	
+	margin-top: 15px;
+	width: 260px;
+	height: 100%;
+	transition: opacity 1s;
 }
 .article-show >h2{
 	text-align: center;
@@ -149,7 +158,7 @@ body{
 	color: #e84c3d;	
 }
 .article-show >p{
-	margin-top: 20px;
+	margin-top: 5px;
 	padding-bottom: 20px;
     border-bottom: 2px solid #eee;
     font-size: 18px;
@@ -364,6 +373,39 @@ body{
 #write-content{
 	padding: 45px 50px 50px 50px;
 }
+.a-upload{
+	margin-left: 60px;
+    padding: 4px 10px;
+    height: 20px;
+    line-height: 20px;
+    position: relative;
+    cursor: pointer;
+    color: #888;
+    background: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1
+}
+.a-upload  input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer;
+}
+.a-upload:hover {
+    color: #444;
+    background: #eee;
+    border-color: #ccc;
+    text-decoration: none;
+}
+
+
 #write-category{
 	float: left;
 	width: 150px;

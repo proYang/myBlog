@@ -46,7 +46,7 @@
                 $arr=mysqli_fetch_assoc($re);
                 mysqli_close($link);
             ?>
-            <form name="article" method="post" action="articleUpdate.php">
+            <form name="article" onsubmit="return myconfirm();" method="post" enctype="multipart/form-data" action="articleUpdate.php">
             <select name="selectname" id="write-category">
                     <!-- 面向对象zxw -->
                     <?php       
@@ -68,11 +68,15 @@
             </select>
                 <input type="hidden" name="id" value="<?php echo $arr['id']?>"/>
                 <input type="text" name="title" id="write-title" value="<?php echo $arr['title']?>"/>
+                <a href="javascript:;" class="a-upload">
+                    <input type="file" name="upfile">更改文章封面
+                </a>
                 <textarea name="content"><?php echo $arr['content']?></textarea>
                 <input id="write-submit" type="submit" value="确认修改"/>
             </form>
             </div>
         </div>
     </div>
+    <script type="text/javascript" src="../js/confirm.js"></script>
 </body>
 </html>
