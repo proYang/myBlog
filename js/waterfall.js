@@ -36,9 +36,9 @@ function getByClass (parent,clsName) {
 }
 function getMinHeightIndex (arr,val) {
 	// 获取height最小时对应的列数
-	for (var i = 0; i < arr.length; i++) {
+	for (var i = 0; i < arr.length; i++){
 		if(arr[i]==val)
-			return i;
+		return i;
 	}
 }
 // function bigboxH (boxs) {

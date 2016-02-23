@@ -12,7 +12,6 @@
 				<li class="title-content" id="left-icon"><a href=""><div>博客</div></a></li>
 				<li class="title-content"><a href="../index.php">主页</a></li>
 				<li class="title-content title-item"><a href="articles.php">文章</a></li>
-				<li class="title-content"><a href="photos.php">相册</a></li>
 				<li class="title-content"><a href="time.php">足迹</a></li>
 				<li class="title-content"><a href="personal.php">个人简介</a></li>
 				<li class="title-content"><a href="words.php">留言板</a></li>
@@ -68,6 +67,7 @@
 	                        echo "<span>分类:".$arrs['name']."</span>";
                     	?>
                     <span><?php echo $arr['time'];?></span>
+                    <img class="pages_img" src="<?php echo $arr['cover'];?>">
             		<p>&nbsp&nbsp&nbsp&nbsp&nbsp<?php echo $arr['content'];?></p>            		
 				</article>
 				<div class="article-foot" id="article-pages">

@@ -32,7 +32,6 @@
 				<li class="control-content" id="menu-message"><a href="controlMessage.php"><i class="iconfont">&#xe60e;</i>个人信息</a></li>
 				<li class="control-content"><a href="controlManage.php"><i class="iconfont">&#xe60a;</i>文章管理</a></li>
 				<li class="control-content"><a href="controlCategory.php"><i class="iconfont">&#xe60b;</i>文章分类</a></li>
-				<li class="control-content"><a href="controlPhotos.php"><i class="iconfont">&#xe60d;</i>相册管理</a></li>
 				<li class="control-content"><a href="controlComment.php"><i class="iconfont">&#xe60f;</i>评论审核</a></li>
 			</ul>
 		</div>
@@ -43,7 +42,13 @@
                 $re=mysqli_query($link,$sql);//执行sql语句
                 $arr=mysqli_fetch_assoc($re);
             ?>
-			<form id="imessage_form" method="post" action="messageUpdate.php">
+			<form id="imessage_form" onsubmit="return myconfirm();" enctype="multipart/form-data" method="post" action="messageUpdate.php">				
+                <div id="imessage_div">
+                	<a href="javascript:;" id="imessage_logo" class="a-upload">
+                    	<input type="file" name="upfile"><i class="iconfont">&#xe612;</i>
+                	</a>
+                	<span>更改头像</span>
+                </div>
                 <div>
                 	<span>昵称</span><input type="text" name="name" value="<?php echo $arr['name']?>"/>
                 </div>

@@ -12,7 +12,6 @@
 				<li class="title-content" id="left-icon"><a href=""><div>博客</div></a></li>
 				<li class="title-content title-item"><a href="index.php">主页</a></li>
 				<li class="title-content"><a href="pages/articles.php">文章</a></li>
-				<li class="title-content"><a href="pages/photos.php">相册</a></li>
 				<li class="title-content"><a href="pages/time.php">足迹</a></li>
 				<li class="title-content"><a href="pages/personal.php">个人简介</a></li>
 				<li class="title-content"><a href="pages/words.php">留言板</a></li>
@@ -35,7 +34,7 @@
 				$reu=mysqli_query($link,$sql);
 				$arru = mysqli_fetch_assoc($reu);
 			?>
-			<div id="head-photo"><img src="img/head-photo.jpg" alt="头像"></div>
+			<div id="head-photo"><img src="<?php echo $arru['ilogo'];?>" alt="头像"></div>
 			<acticle id="myword">
 <!-- 从数据库获取用户最新签名 -->
 			<p id="personal_motto"><?php echo $arru['motto'];?></p>
@@ -94,5 +93,10 @@
 		<a class="jump-top"></a>
 	</div>
 	<script type="text/javascript" src="js/waterfall.js"></script>
+	<script>
+		window.onload=function(){
+			waterfall('bigbox','smallbox');
+		}
+	</script>
 </body>
 </html>

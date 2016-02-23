@@ -35,8 +35,12 @@ body{
     margin: 0 auto;
     padding: 0;
 }
+.container>ul{
+	display: inline-block;
+	overflow: hidden;
+}
 .title-content{
-	width: 75px;
+	width: 80px;
 	margin: 0 14px 0 0;
 	font-size: 18px;
 	float: left;
@@ -53,6 +57,7 @@ body{
     text-shadow: 1px 0 20px #fff;
 }
 #left-icon{
+	margin-right: 50px;
 	width: 110px;
 	font-size: 25px;
 }
@@ -112,6 +117,7 @@ body{
 	margin: 0 auto;
 	height: 160px;
 	width: 160px;
+	object-fit: cover;
 	border-radius: 50%;
 	transition:all 1s;
 }
@@ -127,31 +133,34 @@ body{
 }
 .smallbox{
 	float: left;
-	padding: 20px 0 0 20px;
+	padding: 20px 0 0 30px;
 }
 .article-show{
-	padding: 30px 20px 0 20px;
-	width: 260px;
+	padding: 20px 0 0 0;
+	width: 290px;
 	background-color: #fff;
 	transition:all 0.5s;
 }
 .article-show:hover{
 	box-shadow: 0 0 12px #ddd;
 }
-.article-show:hover>img{
-	opacity: 0.7;
-}
 .article-show a{
-	color: #222;
+	color: #444;
 	transition:all 0.5s;
 }
 .article-show >img{	
 	margin-top: 15px;
-	width: 260px;
-	height: 100%;
+	width: 290px;
+	height: auto;
+	/*height: 150px;*/
 	transition: opacity 1s;
 }
+
+.article-show:hover>img{
+	opacity: 0.9;
+}
 .article-show >h2{
+	padding: 0 20px;
 	text-align: center;
 }
 .article-show >h2 a:hover{
@@ -159,14 +168,14 @@ body{
 }
 .article-show >p{
 	margin-top: 5px;
-	padding-bottom: 20px;
+	padding: 0 15px 20px 15px;
     border-bottom: 2px solid #eee;
     font-size: 18px;
     color: #666;
 }
 .article-foot{
 	overflow: hidden;
-	padding: 12px 8px;
+	padding: 12px 15px;
 }
 .article-foot span{
 	font-size: 18px;
@@ -588,8 +597,8 @@ body{
 
 /*文章内容页*/
 #content{
-	width: 600px;
-	padding: 0 15px;
+	width: 630px;
+	/*padding: 0 15px;*/
 	float: left;
 	background-color: #fff;
 	word-wrap: break-word;
@@ -604,6 +613,11 @@ body{
     height: 0;
     clear: both;
     visibility: hidden;
+}
+.pages_img{
+	margin-top: 10px;
+	width: 630px;
+	height: auto;
 }
 #content >article >h1,#content >article >h1 >a{
 	text-align: center;
@@ -622,7 +636,7 @@ body{
     font-family: verdana;
 }
 #content >article >p{
-	padding-top: 8px;
+	padding: 8px 18px 0 18px;
 	letter-spacing: 2px;
     line-height: 170%;
     font-size: 15px;
@@ -651,7 +665,11 @@ body{
 	transition: all .3s; 
 }
 #article-pages{
+	margin: 0 15px;
 	border-bottom: 1px solid #ddd;
+}
+#comentsbox{
+	padding: 0 15px;
 }
 #comentsbox_ul{
 	margin-bottom: 30px!important;
@@ -927,6 +945,27 @@ body{
 .imessage_span{
 	position: absolute;
 	top: 10px;
+}
+#imessage_div{
+	position: relative;
+	float: right;
+	margin-top: 20px;
+	margin-right: 95px;
+	z-index: 9;
+}
+#imessage_logo{
+	margin-left: 0!important;
+	height: 100px;
+	width: 80px;
+	display: inline-block;
+}
+#imessage_logo >i{
+	margin-top: 35px;
+	display: block;
+	font-size: 80px;
+}
+#imessage_div >span{
+	display: block!important;
 }
 
 /*足迹*/
