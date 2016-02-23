@@ -67,7 +67,12 @@
 	                        echo "<span>分类:".$arrs['name']."</span>";
                     	?>
                     <span><?php echo $arr['time'];?></span>
-                    <img class="pages_img" src="<?php echo $arr['cover'];?>">
+                    <?php
+						if (!$arr['cover']==0) {
+							// 判断封面是否存在
+							echo "<img class='pages_img' src='".$arr['cover']."'>";
+	                	}
+					?>
             		<p>&nbsp&nbsp&nbsp&nbsp&nbsp<?php echo $arr['content'];?></p>            		
 				</article>
 				<div class="article-foot" id="article-pages">

@@ -35,10 +35,6 @@ body{
     margin: 0 auto;
     padding: 0;
 }
-.container>ul{
-	display: inline-block;
-	overflow: hidden;
-}
 .title-content{
 	width: 80px;
 	margin: 0 14px 0 0;
