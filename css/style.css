@@ -1010,6 +1010,12 @@ body{
 	background: url(../img/spine.png) repeat-y 200px 0;
 }
 .content_item_time{
+	left: 0px;
+	top: 0px;
+	width: 400px;
+	height: 300px;
+}
+.content_item_time{
 	height: 30px;
 	width: 125px;
 	line-height: 30px;
@@ -1017,9 +1023,9 @@ body{
 	text-align: center;
 	font-size: 14px;
 	position: relative;
-	left: -180px;
-	top: 29px;
-	border-radius: 40px 0;
+	left: -190px;
+	top: 17px;
+	border-radius: 15px;
 	background: rgba(0,0,0,.3);
 	transition: all .5s;
 	box-shadow: 0 0 5px rgba(0,0,0,.3);
@@ -1058,7 +1064,7 @@ body{
 	position: absolute;
 	top:2px;
 	left: 2px;
-	opacity: 0;
+	opacity: .8;
 	transition: opacity .5s;
 }
 .content_item:hover .content_item_icon_dot_child{
@@ -1081,6 +1087,7 @@ body{
 }
 .time-foot>a,
 .content_item_arcitle>p{
+	overflow: hidden;
     color: #888;
 }
 .content_item_arcitle >h4 >a{
@@ -1096,6 +1103,12 @@ body{
 .content_item_arcitle >h4 >a:hover{
 	left: 36px;	
 	color: #e84c3d;
+}
+.content_item_img{
+	padding:5px 15px 0 10px;
+	float: left;
+	width: 150px;
+	height: auto;
 }
 /*.time-show{
 	background: #fefefe;

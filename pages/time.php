@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-<head>
+<head> 
 	<meta charset="UTF-8">
 	<title>myBlog|足迹</title>
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
@@ -50,7 +50,15 @@
 					</div>
 					<div class="content_item_arcitle">
 						<h4><a href="article-pages.php?id=<?php echo $row['id']?>"><?php echo $row['title'];?></a></h4>
-						<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<?php echo mb_substr($row['content'],0,180,'utf-8')."......";?></p>
+						<p>
+		                    <?php
+								if (!$row['cover']==0) {
+									// 判断封面是否存在
+									echo "<img class='content_item_img' src='".$row['cover']."'>";
+	                			}
+							?>
+		            		<span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<?php echo mb_substr($row['content'],0,180,'utf-8')."......";?></span>           
+	            		</p>
 						<div class="time-foot">
 				            <a href="../phpServer/support.php?id=<?php echo $row['id']?>">
 				            	<i class="iconfont">&#xe603;</i><span><?php echo $row['support'];?></span>
