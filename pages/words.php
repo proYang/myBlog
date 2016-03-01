@@ -45,6 +45,14 @@
 					</script>
 			<!-- 多说公共JS代码 end -->
 		</div>
+		<div id="words_upload" class="container">
+		<!-- 加载动画 -->
+			<div class="spinner">
+  				<div class="bounce1"></div>
+  				<div class="bounce2"></div>
+  				<div class="bounce3"></div>
+			</div>
+		</div>
 	</div>
 	<div id="footer" class="container">
 		<div id="footer-link">
@@ -62,5 +70,11 @@
 	<div id="goTop">
 		<a class="jump-top"></a>
 	</div>
+	<script type="text/javascript">
+		window.onload=function(){
+			var words_upload = document.getElementById('words_upload');
+			words_upload.style.display='none';
+		}
+	</script>
 </body>
 </html>
