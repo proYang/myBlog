@@ -12,6 +12,7 @@
     $selectname = $_POST['selectname'];
     $title = $_POST['title'];
     $content = $_POST['content'];
+    $content_txt = $_POST['content_txt'];
     $time=date('Y-m-d');
 
         //上传文件类型列表 
@@ -74,7 +75,7 @@
                     echo "<script>alert('移动文件出错!');history.go(-1);</script>"; 
                     exit;  
                 }
-                $sql="update article set title ='$title',content ='$content',time='$time',category ='$selectname',cover='$destination' where id ='$id'";
+                $sql="update article set title ='$title',content ='$content',content_txt ='$content_txt',time='$time',category ='$selectname',cover='$destination' where id ='$id'";
         }
         
     }

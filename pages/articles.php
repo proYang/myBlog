@@ -32,7 +32,7 @@
 				<div id="bigbox">
 				<?php
 					require_once "../phpServer/conn.php";
-					$sql="select * from article ORDER BY time DESC ";
+					$sql="select * from article ORDER BY time DESC,id DESC";
 					$re=mysqli_query($link,$sql);
 					foreach ($re as $row) {
 				?>
@@ -42,11 +42,11 @@
 							<?php
 								if (!$row['cover']==0) {
 									// 判断封面是否存在
-									$temp=mb_substr($row['content'],0,90,'utf-8')."...";
+									$temp=mb_substr($row['content_txt'],0,90,'utf-8')."...";
 									echo "<img src='".$row['cover']."'>";
 									echo "<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp".$temp."</p>";
 			                	}else{
-			                		$temp=mb_substr($row['content'],0,160,'utf-8')."...";
+			                		$temp=mb_substr($row['content_txt'],0,160,'utf-8')."...";
 									echo "<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp".$temp."</p>";
 								}
 							?>

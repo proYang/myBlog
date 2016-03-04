@@ -31,7 +31,7 @@
 			<div class="time_header">
 				<div class="time_header_icon">足<br>&nbsp&nbsp&nbsp迹</div>
 				<div class="time_header_weather">
-					<iframe allowtransparency="true" frameborder="0" width="195" height="96" scrolling="no" src="http://tianqi.2345.com/plugin/widget/index.htm?s=2&z=1&t=0&v=0&d=1&bd=0&k=000000&f=ffffff&q=1&e=1&a=1&c=54511&w=195&h=96&align=right"></iframe>
+					<iframe allowtransparency="true" frameborder="0" width="195" height="96" scrolling="no" src="http://tianqi.2345.com/plugin/widget/index.htm?s=2&z=3&t=0&v=0&d=1&bd=0&k=&f=ffffff&q=1&e=1&a=1&c=57516&w=195&h=96&align=center"></iframe>
 				</div>
 				<p>&nbsp&nbsp&nbsp&nbsp&nbsp落花不会有芳香，流光不会有再现，逝水不会有重归，时间不会有重返。</p>
 			</div>
@@ -57,7 +57,7 @@
 									echo "<img class='content_item_img' src='".$row['cover']."'>";
 	                			}
 							?>
-		            		<span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<?php echo mb_substr($row['content'],0,180,'utf-8')."......";?></span>           
+		            		<span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<?php echo mb_substr($row['content_txt'],0,180,'utf-8')."......";?></span>           
 	            		</p>
 						<div class="time-foot">
 				            <a href="../phpServer/support.php?id=<?php echo $row['id']?>">

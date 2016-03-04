@@ -10,6 +10,7 @@
     $selectname = $_POST['selectname'];
     $title = $_POST['title'];
     $content = $_POST['content'];
+    $content_txt = $_POST['content_txt'];
     $time=date('Y-m-d');
 
 
@@ -78,7 +79,7 @@
     }
     // echo $destination;
  
-    $sql = "insert into article(category,title,content,time,cover) values ('$selectname','$title','$content','$time','$destination')";
+    $sql = "insert into article(category,title,content,content_txt,time,cover) values ('$selectname','$title','$content','$content_txt','$time','$destination')";
     //echo $sql;
     $re = mysqli_query($link,$sql);//执行sql语句
     //echo $re;

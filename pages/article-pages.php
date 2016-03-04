@@ -4,11 +4,12 @@
 	<meta charset="UTF-8">
 	<title>myBlog|文章</title>
 	<link rel="stylesheet" type="text/css" href="../css/style.css">	
+	<script src="../ueditor/ueditor.parse.js"></script>
 </head>
 <body>
 	<div id="top-fix">
 		<div class="container">
-			<ul>
+			<ul id="pages_title_ul">
 				<li class="title-content" id="left-icon"><a href=""><div>博客</div></a></li>
 				<li class="title-content"><a href="../index.php">主页</a></li>
 				<li class="title-content title-item"><a href="articles.php">文章</a></li>
@@ -73,9 +74,9 @@
 							echo "<img class='pages_img' src='".$arr['cover']."'>";
 	                	}
 					?>
-            		<p>&nbsp&nbsp&nbsp&nbsp&nbsp<?php echo $arr['content'];?></p>            		
+            		<div id="show_content"><p>&nbsp&nbsp&nbsp&nbsp&nbsp<?php echo $arr['content'];?></p> </div>
 				</article>
-				<div class="article-foot" id="article-pages">
+				<div class="article-foot article-pages-foot" id="article-pages">
 		            <div class="article_comment"><a href="../phpServer/support.php?id=<?php echo $tem_id?>"><i class="iconfont">&#xe603;</i><span><?php echo $arr['support'];?></span></a></div>
 		            <div class="article_comment"><i class="iconfont">&#xe606;</i><span><?php echo $arr['comments'];?></span></div>
 		            <div id="share_button" class="article_comment"><i class="iconfont">&#xe608;</i><span>
@@ -91,7 +92,6 @@
 						<a class="jiathis_button_email"></a>
 						<a class="jiathis_button_copy"></a>
 					</div>
-					<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=2084374" charset="utf-8"></script>
 					<!-- JiaThis Button END -->
                 </div>
 				<div id="comentsbox">
@@ -100,8 +100,11 @@
 						<?php
 							$sql="select * from comment where aid=".$tem_id;
 							$rec=mysqli_query($link,$sql);
+							if (mysqli_num_rows($rec)==0) {
+								echo "<div class='comment_none'>暂无评论！</div>";
+							}							
 							foreach ($rec as $row) {
-						?>
+						?>  
 							<li>
 								<div class="comment_img"><i class="iconfont">&#xe612;</i></div>
 								<div class="comment_right">
@@ -172,9 +175,14 @@
     <script type="text/javascript" src="../js/goTop.js"></script>
 	<script type="text/javascript" src="../js/showButton.js"></script>
 	<script>
+		uParse('#show_content', {
+    		rootPath: '../'
+		})
 		window.onload=function(){
 		backTop();
 		}
-	</script>         
+	</script>   
+
+					<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=2084374" charset="utf-8"></script>      
 </body>
 </html>

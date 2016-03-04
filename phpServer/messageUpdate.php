@@ -1,5 +1,5 @@
 <?php
-    // 验证登 录
+    // 验证登录
     session_start();
     if(!isset($_SESSION['temp'])){
             echo "<script>location.href='../pages/login.html'</script>";

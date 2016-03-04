@@ -11,12 +11,15 @@
 	<meta charset="UTF-8">
 	<title>myBlog</title>
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<script type="text/javascript" charset="utf-8" src="../ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../ueditor/ueditor.all.min.js"> </script>
+    <script type="text/javascript" charset="utf-8" src="../ueditor/lang/zh-cn/zh-cn.js"></script>
 </head>
 <body>
 	<div id="top-fix">
 		<div class="container">
 			<ul>
-				<li class="title-content" id="left-icon"><a href="../index.php"><div>博客</div></a></li>
+				<li class="title-content" id="left-icon"><a href="##"><div>博客</div></a></li>
 				<li class="title-control"><a href="">后台管理</a></li>
 			</ul>
 			<ul id="mylink">
@@ -58,8 +61,22 @@
 				<a href="javascript:;" class="a-upload">
     				<input type="file" name="upfile">上传文章封面
 				</a>
-				<textarea  name="content" placeholder="请输入文章内容"></textarea>
-			    <input id="write-submit" type="submit" value="发布"/>
+				<script id="editor" class="editor" type="text/plain" style="width:auto;height:500px;"></script>
+				<!-- <textarea  name="content" placeholder="请输入文章内容"></textarea> -->
+			    <input id="write-submit" onclick="getContent()" type="submit" value="发布"/>
+			    <input id="temp_content" type="hidden" name="content">
+			    <input id="temp_content_txt" type="hidden" name="content_txt">
+			    <script type="text/javascript">
+				    //实例化编辑器
+				    //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
+				    var ue = UE.getEditor('editor');
+				    function getContent() {
+				    	var temp_content = document.getElementById('temp_content');
+				    	var temp_content_txt = document.getElementById('temp_content_txt');
+				    	temp_content.value = UE.getEditor('editor').getContent();
+				    	temp_content_txt.value = UE.getEditor('editor').getContentTxt();
+    				}
+    			</script>
 				</form>
 			</div>
 		</div>

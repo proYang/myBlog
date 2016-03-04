@@ -35,6 +35,9 @@ body{
     margin: 0 auto;
     padding: 0;
 }
+.container li{
+	clear: none!important;
+}
 .title-content{
 	width: 80px;
 	margin: 0 14px 0 0;
@@ -136,6 +139,7 @@ body{
 	width: 290px;
 	background-color: #fff;
 	transition:all 0.5s;
+	word-wrap: break-word;
 }
 .article-show:hover{
 	box-shadow: 0 0 12px #ddd;
@@ -169,9 +173,14 @@ body{
     font-size: 18px;
     color: #666;
 }
+.article-pages-foot{
+	margin: 0 15px!important;
+	overflow: hidden;
+	padding: 12px 50px!important;
+}
 .article-foot{
 	overflow: hidden;
-	padding: 12px 15px;
+	padding: 12px 30px;
 }
 .article-foot span{
 	font-size: 18px;
@@ -380,7 +389,7 @@ body{
 	padding: 45px 50px 50px 50px;
 }
 .a-upload{
-	margin-left: 60px;
+	margin-left: 100px;
     padding: 4px 10px;
     height: 20px;
     line-height: 20px;
@@ -389,7 +398,7 @@ body{
     color: #888;
     background: #fafafa;
     border: 1px solid #ddd;
-    border-radius: 4px;
+    /*border-radius: 4px;*/
     overflow: hidden;
     display: inline-block;
     *display: inline;
@@ -434,7 +443,7 @@ body{
 	outline:none;
 	font-family:"微软雅黑", Arial, Helvetica, sans-serif;
 }
-#write-content textarea{
+/*#write-content textarea{
 	float: left;
 	margin-top: 15px;
 	display: block;
@@ -444,6 +453,9 @@ body{
 	font-size: 14px;
 	outline:none;
 	font-family:"微软雅黑", Arial, Helvetica, sans-serif;
+}*/
+.editor{
+	margin-top: 10px;
 }
 #write-content >h3{
 	text-align: center;
@@ -453,7 +465,7 @@ body{
 }
 #write-submit{
 	float: right;
-	margin: 10px 40px 40px auto;
+	margin: 10px 20px 40px auto;
 	font-size: 14px;
 	font-family:"微软雅黑", Arial, Helvetica, sans-serif;
 }
@@ -594,14 +606,14 @@ body{
 
 /*文章内容页*/
 #content{
-	width: 630px;
-	/*padding: 0 15px;*/
+	width: 680px;
+	padding: 0 60px;
 	float: left;
 	background-color: #fff;
 	word-wrap: break-word;
 }
 #cate_link{
-	width: 280px;
+	width: 160px;
 	float: left;
 }
 #article-content::after{
@@ -612,9 +624,10 @@ body{
     visibility: hidden;
 }
 .pages_img{
-	margin-top: 10px;
+	margin: 10px auto;
 	width: 630px;
 	height: auto;
+	display: block;
 }
 #content >article >h1,#content >article >h1 >a{
 	text-align: center;
@@ -666,7 +679,8 @@ body{
 	border-bottom: 1px solid #ddd;
 }
 #comentsbox{
-	padding: 0 15px;
+	margin: 0 auto;
+	width: 600px;
 }
 #comentsbox_ul{
 	margin-bottom: 30px!important;
@@ -680,7 +694,7 @@ body{
 }
 #comentsbox >ul{
 	min-height: 40px;
-	margin-bottom: 100px;
+	margin-bottom: 40px;
 }
 #comentsbox >ul >li{
 	overflow: hidden;
@@ -694,6 +708,10 @@ body{
 }
 .comment_right{
 	width: 540px;
+}
+.comment_none{
+	padding-top: 30px;
+	text-align: center;
 }
 .comment_delete{
 	float: left;
@@ -930,14 +948,13 @@ body{
     display: inline-block;
     font-size: 14px;
     font-family: "微软雅黑", Arial, Helvetica, sans-serif;
-}
-#imessage_textarea1{
 	resize: none;
 	height: 50px;
 }
-#imessage_textarea2{
-	resize: none;
-	height: 200px;
+#imessage_back{
+	padding-left: 90px;
+	width: 570px;
+	height: auto;
 }
 .imessage_span{
 	position: absolute;

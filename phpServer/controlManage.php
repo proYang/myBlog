@@ -16,7 +16,7 @@
 	<div id="top-fix">
 		<div class="container">
 			<ul>
-				<li class="title-content" id="left-icon"><a href="../index.php"><div>博客</div></a></li>
+				<li class="title-content" id="left-icon"><a href="##"><div>博客</div></a></li>
 				<li class="title-control"><a href="">后台管理</a></li>
 			</ul>
 			<ul id="mylink">
@@ -66,7 +66,7 @@
 	        	
 	        	$start_num = ($current_page - 1) * PAGE_SIZE;
 	        	
-	        	$query = "select * from article ORDER BY time DESC limit ".$start_num.", ".PAGE_SIZE;
+	        	$query = "select * from article ORDER BY time DESC,id DESC limit ".$start_num.", ".PAGE_SIZE;
 	        	 
 	        	$result = $db->query($query);
 	        	

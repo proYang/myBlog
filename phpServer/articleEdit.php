@@ -11,12 +11,15 @@
     <meta charset="UTF-8">
     <title>myBlog</title>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <script type="text/javascript" charset="utf-8" src="../ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../ueditor/ueditor.all.min.js"> </script>
+    <script type="text/javascript" charset="utf-8" src="../ueditor/lang/zh-cn/zh-cn.js"></script>
 </head>
 <body>
     <div id="top-fix">
         <div class="container">
             <ul>
-                <li class="title-content" id="left-icon"><a href="../index.php"><div>博客</div></a></li>
+                <li class="title-content" id="left-icon"><a href="##"><div>博客</div></a></li>
                 <li class="title-control"><a href="">后台管理</a></li>
             </ul>
             <ul id="mylink">
@@ -70,8 +73,27 @@
                 <a href="javascript:;" class="a-upload">
                     <input type="file" name="upfile">更改文章封面
                 </a>
-                <textarea name="content"><?php echo $arr['content']?></textarea>
-                <input id="write-submit" type="submit" value="确认修改"/>
+                <script id="editor" class="editor" type="text/plain" style="width:auto;height:500px;"></script>
+                <input id="write-submit" type="submit" onclick="getContent()" value="确认修改"/>                
+                <input id="old_content" type="hidden" value='<?php echo $arr['content']?>'/>
+                <input id="temp_content" type="hidden" name="content"/>
+                <input id="temp_content_txt" type="hidden" name="content_txt"/>
+                <script type="text/javascript">
+                    //实例化编辑器
+                    //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
+                    var ue = UE.getEditor('editor');
+                    ue.ready(function() {
+                        // 初始化编辑器内容
+                        var old_content = document.getElementById('old_content');
+                        ue.setContent(old_content.value);
+                    });
+                    function getContent() {
+                        var temp_content = document.getElementById('temp_content');
+                        var temp_content_txt = document.getElementById('temp_content_txt');
+                        temp_content.value = UE.getEditor('editor').getContent();
+                        temp_content_txt.value = UE.getEditor('editor').getContentTxt();
+                    }
+                </script>
             </form>
             </div>
         </div>
