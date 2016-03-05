@@ -82,16 +82,8 @@
 		            <div id="share_button" class="article_comment"><i class="iconfont">&#xe608;</i><span>
 						<a class="jiathis_counter_style"></a></span></div>
 					<!-- JiaThis Button BEGIN -->
-					<div  id="share_button_box" class="jiathis_style_24x24">
-						<a class="jiathis_button_qzone"></a>
-						<a class="jiathis_button_tsina"></a>
-						<a class="jiathis_button_tqq"></a>
-						<a class="jiathis_button_weixin"></a>
-						<a class="jiathis_button_cqq"></a>
-						<a class="jiathis_button_douban"></a>
-						<a class="jiathis_button_email"></a>
-						<a class="jiathis_button_copy"></a>
-					</div>
+					<div id="share_button_box" class="bdsharebuttonbox"><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a></div>
+					<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='https://dn-iyz-file.qbox.me/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
 					<!-- JiaThis Button END -->
                 </div>
 				<div id="comentsbox">
@@ -180,9 +172,7 @@
 		})
 		window.onload=function(){
 		backTop();
-		}
-	</script>   
-
-					<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=2084374" charset="utf-8"></script>      
+		}   
+	</script>
 </body>
 </html>

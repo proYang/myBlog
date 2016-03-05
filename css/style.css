@@ -685,6 +685,11 @@ body{
 #comentsbox_ul{
 	margin-bottom: 30px!important;
 }
+#comentsbox_ul li{
+	overflow: hidden;	
+	border-bottom: 1px solid #ddd;
+	padding: 20px 0;
+}
 #comentsbox_ul >div{
 	color: #000;
 	font-weight: 700;
@@ -797,7 +802,13 @@ body{
 	border: 1px solid #333;
 }
 #share_button_box{
+	float: left;
+	height: 25px!important;
 	display: none;
+	margin-left: 5px;
+}
+#share_button_box >a{
+	margin-top: 0!important;
 }
 .article_comment{
 	margin:0 4px;
@@ -906,7 +917,7 @@ body{
 	color: #222;
 }
 #personal_share{
-	padding: 0 336px;
+	padding: 0 385px;
 	height: 32px;
 }
 #personal_con >h4{
