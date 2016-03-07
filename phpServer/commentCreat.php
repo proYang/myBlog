@@ -2,11 +2,15 @@
     require_once'conn.php';
     date_default_timezone_set('Asia/Chongqing');
     $name = $_POST['name'];
+    $name = clean($name);
     $mail = $_POST['mail'];
+    $mail = clean($mail);
     $id = $_POST['id'];
+    $id = clean($id);
     $content = $_POST['content'];
+    $content = clean($content);
     $time=date('Y-m-d');
-    if (is_validemail($mail)==1) {
+    if (is_validemail($mail)==1&&$name) {
         $sql = "insert into comment(aid,name,mail,content,time) values ('$id','$name','$mail','$content','$time')";
         // echo $sql;
         $re = mysqli_query($link,$sql);//执行sql语句
@@ -26,7 +30,7 @@
             echo "<script>alert('评论失败');history.go(-1);</script>";
         }
     }else{
-        echo "<script>alert('邮箱地址无效');history.go(-1);</script>";
+        echo "<script>alert('邮箱地址或用户名无效');history.go(-1);</script>";
     }
     mysqli_close($link);//关闭数据库
 
@@ -38,3 +42,28 @@
         }
             return $check;
     } 
+// 防SQL注入
+    function clean($input)
+    {
+        if (is_array($input))
+        {
+            foreach ($input as $key => $val)
+             {
+                $output[$key] = clean($val);
+                // $output[$key] = $this-&gt;clean($val);
+            }
+        }
+        else
+        {
+            $output = (string) $input;
+            // if magic quotes is on then use strip slashes
+            if (get_magic_quotes_gpc()) 
+            {
+                $output = stripslashes($output);
+            }
+            // $output = strip_tags($output);
+            $output = htmlentities($output, ENT_QUOTES, 'UTF-8');
+        }
+    // return the clean text
+        return $output;
+    }

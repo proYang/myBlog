@@ -1,8 +1,10 @@
     <?php  
         if(isset($_POST["submit"]) && $_POST["submit"] == "登录")  
         {  
-            $user = $_POST["username"];  
-            $psw = $_POST["password"];  
+            $user = $_POST["username"];
+            $user = clean($user);
+            $psw = $_POST["password"]; 
+            $psw = clean($psw);
             if($user == "" || $psw == "")  
             {  
                 echo "<script>alert('请输入用户名或密码！'); history.go(-1);</script>";  
@@ -34,5 +36,30 @@
         {  
             echo "<script>alert('提交未成功！'); history.go(-1);</script>";  
         }  
+        // 防SQL注入
+        function clean($input)
+        {
+            if (is_array($input))
+            {
+                foreach ($input as $key => $val)
+                 {
+                    $output[$key] = clean($val);
+                    // $output[$key] = $this-&gt;clean($val);
+                }
+            }
+            else
+            {
+                $output = (string) $input;
+                // if magic quotes is on then use strip slashes
+                if (get_magic_quotes_gpc()) 
+                {
+                    $output = stripslashes($output);
+                }
+                // $output = strip_tags($output);
+                $output = htmlentities($output, ENT_QUOTES, 'UTF-8');
+            }
+        // return the clean text
+            return $output;
+        }
       
     ?>  
