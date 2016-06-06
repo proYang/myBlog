@@ -81,6 +81,6 @@
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript" src="../js/confirm.js"></script>
+	<script type="text/javascript" src="../scripts/util/confirm.js"></script>
 </body>
 </html>

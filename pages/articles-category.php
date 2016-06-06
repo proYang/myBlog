@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>myBlog|文章</title>
 	<link rel="stylesheet" type="text/css" href="../css/style.css">	
+	<script data-main="../scripts/pages/articles.js" src="../scripts/lib/require.js"></script>
 </head>
 <body>
 	<div id="top-fix">
@@ -84,13 +85,5 @@
 	<div id="goTop">
 		<a class="jump-top"></a>
 	</div>
-	<script type="text/javascript" src="../js/waterfall.js"></script>
-	<script type="text/javascript" src="../js/goTop.js"></script>
-	<script>
-		window.onload=function(){
-		waterfall('bigbox','smallbox');
-		backTop();
-		}
-	</script>
 </body>
 </html>

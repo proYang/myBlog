@@ -11,6 +11,7 @@
 	<meta charset="UTF-8">
 	<title>myBlog</title>
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<script data-main="../scripts/pages/index.js" src="../scripts/lib/require.js"></script>
 </head>
 <body>
 	<div id="top-fix">
@@ -63,11 +64,5 @@
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript" src="../js/waterfall.js"></script>
-	<script>
-		window.onload=function(){
-		waterfall('bigbox','smallbox');
-		}
-	</script>
 </body>
 </html>

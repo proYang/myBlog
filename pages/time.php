@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>myBlog|足迹</title>
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<script data-main="../scripts/pages/time.js" src="../scripts/lib/require.js"></script>
 </head>
 <body id="time_body">
 	<div id="top-fix">
@@ -92,11 +93,5 @@
 	<div id="goTop">
 		<a class="jump-top"></a>
 	</div>
-	<script src="../js/goTop.js"></script>
-	<script>
-		window.onload=function(){
-		backTop();
-		}
-	</script>
 </body>
 </html>
